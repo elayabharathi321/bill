@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -14,12 +13,22 @@ export class Home {
 
   constructor(private router: Router) {}
 
+  goLogin(): void {
+    this.router.navigate(['/login']);
+  }
+
   closeNotice(): void {
     this.showNotice = false;
   }
 
-  goToLogin(): void {
+  getStarted(): void {
     this.router.navigate(['/login']);
   }
 
+  scrollTo(id: string): void {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
 }

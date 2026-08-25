@@ -1,172 +1,92 @@
-<!-- =====================================================
-     UNDER CONSTRUCTION POPUP
-===================================================== -->
+<div class="billpro-page">
 
-@if (showNotice) {
+  <!-- =====================================================
+       BACKGROUND EFFECTS
+  ====================================================== -->
 
-  <div class="notice-overlay">
+  <div class="background-grid"></div>
 
-    <div class="notice-board">
-
-      <!-- CLOSE -->
-      <button
-        type="button"
-        class="close-btn"
-        (click)="closeNotice()"
-        aria-label="Close"
-      >
-        ×
-      </button>
+  <div class="glow glow-purple"></div>
+  <div class="glow glow-blue"></div>
+  <div class="glow glow-cyan"></div>
 
 
-      <!-- CONSTRUCTION ICON -->
-      <div class="construction-icon">
-        🚧
-      </div>
-
-
-      <!-- BADGE -->
-      <div class="notice-badge">
-        WEBSITE UNDER CONSTRUCTION
-      </div>
-
-
-      <!-- TITLE -->
-      <h2>
-        We're Improving
-        <span>BillPro</span>
-      </h2>
-
-
-      <!-- DESCRIPTION -->
-      <p class="notice-description">
-        Our website is currently under construction.
-        We are working hard to bring you a faster,
-        smarter and better billing experience.
-      </p>
-
-
-      <!-- DIVIDER -->
-      <div class="notice-divider"></div>
-
-
-      <!-- THANK YOU -->
-      <div class="thank-you">
-
-        <strong>
-          Thank you for your patience!
-        </strong>
-
-        <span>
-          We'll be back soon with something better.
-        </span>
-
-      </div>
-
-
-      <!-- CONTINUE -->
-      <button
-        type="button"
-        class="continue-btn"
-        (click)="closeNotice()"
-      >
-        Continue to Website
-        <span>→</span>
-      </button>
-
-
-      <!-- BRAND -->
-      <div class="notice-brand">
-
-        <div class="notice-logo">
-          B
-        </div>
-
-        <span>
-          Bill<span>Pro</span>
-        </span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-}
-
-
-<!-- =====================================================
-     NORMAL BILLPRO WEBSITE
-===================================================== -->
-
-<div class="home-page">
-
-
-  <!-- BACKGROUND EFFECTS -->
-
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
-  <div class="bg-orb orb-3"></div>
-
-
-  <!-- ===================================================
+  <!-- =====================================================
        NAVBAR
-  ==================================================== -->
+  ====================================================== -->
 
   <header class="navbar">
 
-    <div class="logo">
+    <!-- LOGO -->
 
-      <div class="logo-icon">
+    <a class="brand" href="javascript:void(0)">
+
+      <div class="brand-logo">
         B
       </div>
 
-      <span class="logo-text">
+      <div class="brand-name">
         Bill<span>Pro</span>
-      </span>
+      </div>
 
-    </div>
+    </a>
 
 
-    <nav class="nav-links">
+    <!-- DESKTOP NAVIGATION -->
+
+    <nav class="nav-menu">
 
       <a
-        href="#"
+        href="javascript:void(0)"
         class="active"
+        (click)="scrollTo('home')"
       >
         Home
       </a>
 
-      <a href="#features">
+      <a
+        href="javascript:void(0)"
+        (click)="scrollTo('features')"
+      >
         Features
       </a>
 
-      <a href="#how-it-works">
+      <a
+        href="javascript:void(0)"
+        (click)="scrollTo('how-it-works')"
+      >
         How It Works
       </a>
 
-      <a href="#about">
+      <a
+        href="javascript:void(0)"
+        (click)="scrollTo('about')"
+      >
         About
       </a>
 
     </nav>
 
 
-    <div class="nav-actions">
+    <!-- NAV ACTIONS -->
 
-   <button
-  type="button"
-  class="login-btn"
-  (click)="goToLogin()"
->
-  Login
-</button>
+    <div class="nav-actions">
 
       <button
         type="button"
-        class="start-btn"
+        class="nav-login"
+        (click)="goLogin()"
+      >
+        Login
+      </button>
+
+      <button
+        type="button"
+        class="nav-start"
+        (click)="getStarted()"
       >
         Get Started
+        <span>→</span>
       </button>
 
     </div>
@@ -174,27 +94,22 @@
   </header>
 
 
-  <!-- ===================================================
-       MAIN
-  ==================================================== -->
 
-  <main>
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
 
-
-    <!-- =================================================
-         HERO
-    ================================================== -->
+  <main id="home">
 
     <section class="hero">
-
 
       <!-- LEFT -->
 
       <div class="hero-content">
 
-        <div class="badge">
+        <div class="hero-badge">
 
-          <span class="pulse"></span>
+          <span class="badge-dot"></span>
 
           Smart Billing Platform
 
@@ -203,62 +118,74 @@
 
         <h1>
 
-          Manage Your
-          <span>Business</span>
-          <span>Billing Smarter.</span>
+          Manage your
+
+          <span>business billing</span>
+
+          smarter.
 
         </h1>
 
 
         <p class="hero-description">
 
-          Create invoices, manage customers,
+          Create professional invoices, manage customers,
           track payments and simplify GST billing —
           all from one powerful platform.
 
         </p>
 
 
+        <!-- BUTTONS -->
+
         <div class="hero-buttons">
 
           <button
             type="button"
-            class="primary-btn"
+            class="primary-button"
+            (click)="getStarted()"
           >
+
             Get Started
+
             <span>→</span>
+
           </button>
+
 
           <button
             type="button"
-            class="secondary-btn"
+            class="secondary-button"
+            (click)="scrollTo('features')"
           >
+
             Explore Features
+
           </button>
 
         </div>
 
 
-        <div class="trust">
+        <!-- TRUST -->
+
+        <div class="trust-row">
 
           <div class="avatars">
 
-            <span>👨🏻</span>
-            <span>👩🏻</span>
-            <span>👨🏻</span>
-            <span>👩🏻</span>
+            <div>👨🏻</div>
+            <div>👩🏻</div>
+            <div>👨🏽</div>
+            <div>👩🏽</div>
 
           </div>
 
           <div class="trust-text">
 
-            <strong>
-              10,000+
-            </strong>
+            <strong>10,000+</strong>
 
-            <small>
-              Businesses trust us
-            </small>
+            <span>
+              Businesses trust BillPro
+            </span>
 
           </div>
 
@@ -267,146 +194,19 @@
       </div>
 
 
-      <!-- RIGHT -->
 
-      <div class="hero-visual">
+      <!-- RIGHT DASHBOARD -->
+
+      <div class="hero-dashboard">
 
         <div class="dashboard-glow"></div>
 
 
-        <!-- DASHBOARD -->
+        <!-- FLOATING PAYMENT -->
 
-        <div class="dashboard-card">
+        <div class="floating-payment">
 
-          <div class="dashboard-header">
-
-            <div>
-
-              <small>
-                Overview
-              </small>
-
-              <h3>
-                Business Dashboard
-              </h3>
-
-            </div>
-
-            <div class="profile">
-              👤
-            </div>
-
-          </div>
-
-
-          <!-- STATS -->
-
-          <div class="stats">
-
-            <div class="stat-card">
-
-              <div class="stat-icon purple">
-                ₹
-              </div>
-
-              <div>
-
-                <small>
-                  Total Revenue
-                </small>
-
-                <h2>
-                  ₹2,48,560
-                </h2>
-
-                <span class="up">
-                  ↑ 18.5%
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <div class="stat-card">
-
-              <div class="stat-icon blue">
-                ▣
-              </div>
-
-              <div>
-
-                <small>
-                  Total Invoices
-                </small>
-
-                <h2>
-                  1,248
-                </h2>
-
-                <span class="up">
-                  ↑ 12.8%
-                </span>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- CHART -->
-
-          <div class="chart-card">
-
-            <div class="chart-header">
-
-              <span>
-                Revenue Overview
-              </span>
-
-              <span class="year">
-                2026 ▾
-              </span>
-
-            </div>
-
-
-            <div class="chart">
-
-              <div class="bar bar-1"></div>
-              <div class="bar bar-2"></div>
-              <div class="bar bar-3"></div>
-              <div class="bar bar-4"></div>
-              <div class="bar bar-5"></div>
-              <div class="bar bar-6 active-bar"></div>
-              <div class="bar bar-7"></div>
-
-            </div>
-
-
-            <div class="months">
-
-              <span>Jan</span>
-              <span>Feb</span>
-              <span>Mar</span>
-              <span>Apr</span>
-              <span>May</span>
-              <span>Jun</span>
-              <span>Jul</span>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- INVOICE FLOAT -->
-
-        <div class="floating-card invoice-card">
-
-          <div class="float-icon success">
+          <div class="payment-icon">
             ✓
           </div>
 
@@ -425,11 +225,153 @@
         </div>
 
 
-        <!-- GST FLOAT -->
+        <!-- DASHBOARD -->
 
-        <div class="floating-card gst-card">
+        <div class="dashboard-card">
 
-          <div class="float-icon gst">
+          <div class="dashboard-top">
+
+            <div>
+
+              <small>
+                Overview
+              </small>
+
+              <h3>
+                Business Dashboard
+              </h3>
+
+            </div>
+
+            <div class="profile-icon">
+              👤
+            </div>
+
+          </div>
+
+
+          <!-- STATS -->
+
+          <div class="dashboard-stats">
+
+            <div class="stat">
+
+              <div class="stat-icon purple">
+                ₹
+              </div>
+
+              <div>
+
+                <small>
+                  Total Revenue
+                </small>
+
+                <strong>
+                  ₹2,48,560
+                </strong>
+
+                <span class="positive">
+                  ↑ 18.5%
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="stat">
+
+              <div class="stat-icon blue">
+                ▣
+              </div>
+
+              <div>
+
+                <small>
+                  Total Invoices
+                </small>
+
+                <strong>
+                  1,248
+                </strong>
+
+                <span class="positive">
+                  ↑ 12.8%
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- CHART -->
+
+          <div class="revenue-card">
+
+            <div class="revenue-header">
+
+              <strong>
+                Revenue Overview
+              </strong>
+
+              <span>
+                2026⌄
+              </span>
+
+            </div>
+
+
+            <div class="chart">
+
+              <div
+                class="chart-bar"
+                style="height: 38%"
+              ></div>
+
+              <div
+                class="chart-bar"
+                style="height: 55%"
+              ></div>
+
+              <div
+                class="chart-bar"
+                style="height: 48%"
+              ></div>
+
+              <div
+                class="chart-bar"
+                style="height: 75%"
+              ></div>
+
+              <div
+                class="chart-bar"
+                style="height: 60%"
+              ></div>
+
+              <div
+                class="chart-bar highlight"
+                style="height: 92%"
+              ></div>
+
+              <div
+                class="chart-bar"
+                style="height: 70%"
+              ></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- GST CARD -->
+
+        <div class="floating-gst">
+
+          <div class="gst-icon">
             %
           </div>
 
@@ -447,41 +389,19 @@
 
         </div>
 
-
-        <!-- PAYMENT FLOAT -->
-
-        <div class="floating-card payment-card">
-
-          <div class="payment-icon">
-            ₹
-          </div>
-
-          <div>
-
-            <strong>
-              Payment Received
-            </strong>
-
-            <small>
-              Today, 10:42 AM
-            </small>
-
-          </div>
-
-        </div>
-
       </div>
 
     </section>
 
 
-    <!-- =================================================
+
+    <!-- =====================================================
          FEATURES
-    ================================================== -->
+    ====================================================== -->
 
     <section
-      class="features-section"
       id="features"
+      class="features-section"
     >
 
       <div class="section-heading">
@@ -492,12 +412,12 @@
 
         <h2>
           Everything you need to
-          <strong>run your business</strong>
+          <strong>run your business.</strong>
         </h2>
 
         <p>
-          Simple and powerful tools designed for
-          modern businesses.
+          Simple and powerful tools designed
+          for modern businesses.
         </p>
 
       </div>
@@ -506,9 +426,11 @@
       <div class="feature-grid">
 
 
-        <div class="feature-card">
+        <!-- CARD 1 -->
 
-          <div class="feature-icon purple-bg">
+        <article class="feature-card">
+
+          <div class="feature-icon purple">
             🧾
           </div>
 
@@ -518,19 +440,21 @@
 
           <p>
             Create professional invoices in seconds
-            with automatic calculations.
+            with automatic calculations and GST support.
           </p>
 
-          <a href="#features">
+          <a href="javascript:void(0)">
             Learn more →
           </a>
 
-        </div>
+        </article>
 
 
-        <div class="feature-card">
+        <!-- CARD 2 -->
 
-          <div class="feature-icon blue-bg">
+        <article class="feature-card">
+
+          <div class="feature-icon blue">
             👥
           </div>
 
@@ -539,20 +463,22 @@
           </h3>
 
           <p>
-            Manage all your customers and their
-            billing information easily.
+            Manage customers and their complete
+            billing information from one place.
           </p>
 
-          <a href="#features">
+          <a href="javascript:void(0)">
             Learn more →
           </a>
 
-        </div>
+        </article>
 
 
-        <div class="feature-card">
+        <!-- CARD 3 -->
 
-          <div class="feature-icon green-bg">
+        <article class="feature-card">
+
+          <div class="feature-icon green">
             📊
           </div>
 
@@ -565,16 +491,18 @@
             performance with useful reports.
           </p>
 
-          <a href="#features">
+          <a href="javascript:void(0)">
             Learn more →
           </a>
 
-        </div>
+        </article>
 
 
-        <div class="feature-card">
+        <!-- CARD 4 -->
 
-          <div class="feature-icon orange-bg">
+        <article class="feature-card">
+
+          <div class="feature-icon orange">
             ⚡
           </div>
 
@@ -584,48 +512,46 @@
 
           <p>
             Fast billing with secure data management
-            for your business.
+            designed for growing businesses.
           </p>
 
-          <a href="#features">
+          <a href="javascript:void(0)">
             Learn more →
           </a>
 
-        </div>
+        </article>
 
       </div>
 
     </section>
 
 
-    <!-- =================================================
+
+    <!-- =====================================================
          HOW IT WORKS
-    ================================================== -->
+    ====================================================== -->
 
     <section
-      class="how-section"
       id="how-it-works"
+      class="how-section"
     >
 
       <div class="section-heading">
 
         <span>
-          HOW IT WORKS
+          SIMPLE PROCESS
         </span>
 
         <h2>
           Start billing in
-          <strong>3 simple steps</strong>
+          <strong>three steps.</strong>
         </h2>
-
-        <p>
-          Get your business ready in just a few minutes.
-        </p>
 
       </div>
 
 
       <div class="steps">
+
 
         <div class="step">
 
@@ -638,7 +564,8 @@
           </h3>
 
           <p>
-            Register your business and create your profile.
+            Set up your business profile
+            in just a few minutes.
           </p>
 
         </div>
@@ -654,11 +581,12 @@
           </div>
 
           <h3>
-            Add Products
+            Add Customers
           </h3>
 
           <p>
-            Add products, customers and GST information.
+            Add customers and products
+            to your billing system.
           </p>
 
         </div>
@@ -678,7 +606,8 @@
           </h3>
 
           <p>
-            Generate and share professional invoices instantly.
+            Generate professional invoices
+            and track payments.
           </p>
 
         </div>
@@ -688,25 +617,30 @@
     </section>
 
 
-    <!-- =================================================
-         CTA
-    ================================================== -->
 
-    <section class="cta">
+    <!-- =====================================================
+         ABOUT / CTA
+    ====================================================== -->
+
+    <section
+      id="about"
+      class="cta-section"
+    >
 
       <div class="cta-content">
 
         <span>
-          READY TO GET STARTED?
+          BUILT FOR YOUR BUSINESS
         </span>
 
         <h2>
-          Make billing simple.
-          <strong>Grow your business.</strong>
+          Billing shouldn't
+          be complicated.
         </h2>
 
         <p>
-          Start managing your business smarter today.
+          BillPro gives you everything you need
+          to manage your billing efficiently.
         </p>
 
       </div>
@@ -714,9 +648,14 @@
 
       <button
         type="button"
-        class="cta-btn"
+        class="primary-button"
+        (click)="getStarted()"
       >
-        Start Billing Now →
+
+        Start with BillPro
+
+        <span>→</span>
+
       </button>
 
     </section>
@@ -724,28 +663,29 @@
   </main>
 
 
-  <!-- =================================================
-       FOOTER
-  ================================================== -->
 
-  <footer id="about">
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
 
     <div class="footer-brand">
 
-      <div class="logo">
+      <div class="brand">
 
-        <div class="logo-icon">
+        <div class="brand-logo">
           B
         </div>
 
-        <span class="logo-text">
+        <div class="brand-name">
           Bill<span>Pro</span>
-        </span>
+        </div>
 
       </div>
 
       <p>
-        Smart billing management for modern businesses.
+        Smarter billing for modern businesses.
       </p>
 
     </div>
@@ -753,75 +693,114 @@
 
     <div class="footer-links">
 
-      <div>
+      <a href="javascript:void(0)">
+        Privacy
+      </a>
 
-        <h4>
-          Product
-        </h4>
+      <a href="javascript:void(0)">
+        Terms
+      </a>
 
-        <a href="#features">
-          Features
-        </a>
-
-        <a href="#features">
-          Pricing
-        </a>
-
-        <a href="#features">
-          GST Billing
-        </a>
-
-      </div>
-
-
-      <div>
-
-        <h4>
-          Company
-        </h4>
-
-        <a href="#about">
-          About
-        </a>
-
-        <a href="#about">
-          Contact
-        </a>
-
-        <a href="#about">
-          Support
-        </a>
-
-      </div>
-
-
-      <div>
-
-        <h4>
-          Legal
-        </h4>
-
-        <a href="#about">
-          Privacy
-        </a>
-
-        <a href="#about">
-          Terms
-        </a>
-
-        <a href="#about">
-          Security
-        </a>
-
-      </div>
+      <a href="javascript:void(0)">
+        Contact
+      </a>
 
     </div>
 
   </footer>
 
 
-  <div class="copyright">
-    © 2026 BillPro. All rights reserved.
-  </div>
+
+  <!-- =====================================================
+       CONSTRUCTION NOTICE
+  ====================================================== -->
+
+  @if (showNotice) {
+
+    <div class="notice-overlay">
+
+      <div class="notice-board">
+
+        <button
+          type="button"
+          class="notice-close"
+          (click)="closeNotice()"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+
+        <div class="notice-icon">
+          🚧
+        </div>
+
+
+        <div class="notice-label">
+          WEBSITE UNDER CONSTRUCTION
+        </div>
+
+
+        <h2>
+          We're improving
+          <span>BillPro</span>
+        </h2>
+
+
+        <p class="notice-text">
+
+          Our website is currently under construction.
+          We're working hard to bring you a faster,
+          smarter and better billing experience.
+
+        </p>
+
+
+        <div class="notice-line"></div>
+
+
+        <div class="notice-message">
+
+          <strong>
+            Thank you for your patience!
+          </strong>
+
+          <span>
+            We'll be back soon with something better.
+          </span>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="notice-button"
+          (click)="closeNotice()"
+        >
+
+          Continue to Website
+
+          <span>→</span>
+
+        </button>
+
+
+        <div class="notice-brand">
+
+          <div class="notice-brand-logo">
+            B
+          </div>
+
+          <strong>
+            Bill<span>Pro</span>
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  }
 
 </div>
