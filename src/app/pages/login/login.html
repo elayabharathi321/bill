@@ -1,0 +1,463 @@
+<div class="login-page">
+
+  <!-- BACKGROUND EFFECTS -->
+
+  <div class="bg-grid"></div>
+
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <div class="glow glow-3"></div>
+
+
+  <!-- ================================================
+       TOP LOGO
+  ================================================= -->
+
+  <header class="login-header">
+
+    <a
+      routerLink="/"
+      class="brand"
+    >
+
+      <div class="brand-icon">
+        B
+      </div>
+
+      <span>
+        Bill<span>Pro</span>
+      </span>
+
+    </a>
+
+
+    <a
+      routerLink="/"
+      class="back-home"
+    >
+      ← Back to Home
+    </a>
+
+  </header>
+
+
+
+  <!-- ================================================
+       LOGIN AREA
+  ================================================= -->
+
+  <main class="login-container">
+
+
+    <!-- ==============================================
+         LOGIN CARD
+    =============================================== -->
+
+    <div class="login-card">
+
+
+      <!-- CARD TOP -->
+
+      <div class="login-top">
+
+        <div class="welcome-icon">
+          👋
+        </div>
+
+        <h1>
+          Welcome Back
+        </h1>
+
+        <p>
+          Login to manage your business billing.
+        </p>
+
+      </div>
+
+
+
+      <!-- ============================================
+           LOGIN FORM
+      ============================================= -->
+
+      <form
+        (ngSubmit)="login()"
+        #loginForm="ngForm"
+      >
+
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+          <label for="email">
+            Email Address
+          </label>
+
+          <div class="input-wrapper">
+
+            <span class="input-icon">
+              ✉
+            </span>
+
+            <input
+              id="email"
+              type="email"
+              name="email"
+              [(ngModel)]="email"
+              placeholder="Enter your email"
+              required
+              autocomplete="email"
+            />
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PASSWORD -->
+
+        <div class="form-group">
+
+          <div class="password-label">
+
+            <label for="password">
+              Password
+            </label>
+
+            <a
+              href="#"
+              class="forgot-link"
+              (click)="$event.preventDefault()"
+            >
+              Forgot Password?
+            </a>
+
+          </div>
+
+
+          <div class="input-wrapper">
+
+            <span class="input-icon">
+              🔒
+            </span>
+
+            <input
+              id="password"
+              [type]="showPassword ? 'text' : 'password'"
+              name="password"
+              [(ngModel)]="password"
+              placeholder="Enter your password"
+              required
+              autocomplete="current-password"
+            />
+
+
+            <button
+              type="button"
+              class="password-toggle"
+              (click)="togglePassword()"
+              [attr.aria-label]="showPassword ? 'Hide password' : 'Show password'"
+            >
+
+              {{ showPassword ? '◉' : '◌' }}
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- REMEMBER ME -->
+
+        <div class="form-options">
+
+          <label class="remember">
+
+            <input
+              type="checkbox"
+              name="rememberMe"
+              [(ngModel)]="rememberMe"
+            />
+
+            <span class="checkmark"></span>
+
+            <span class="remember-text">
+              Remember me
+            </span>
+
+          </label>
+
+        </div>
+
+
+
+        <!-- LOGIN BUTTON -->
+
+        <button
+          type="submit"
+          class="login-button"
+          [disabled]="!loginForm.valid"
+        >
+
+          <span>
+            Login
+          </span>
+
+          <span class="button-arrow">
+            →
+          </span>
+
+        </button>
+
+
+      </form>
+
+
+
+      <!-- ============================================
+           DIVIDER
+      ============================================= -->
+
+      <div class="divider">
+
+        <span></span>
+
+        <p>
+          OR
+        </p>
+
+        <span></span>
+
+      </div>
+
+
+
+      <!-- ============================================
+           GOOGLE LOGIN
+      ============================================= -->
+
+      <button
+        type="button"
+        class="google-button"
+      >
+
+        <span class="google-icon">
+          G
+        </span>
+
+        <span>
+          Continue with Google
+        </span>
+
+      </button>
+
+
+
+      <!-- ============================================
+           REGISTER
+      ============================================= -->
+
+      <div class="register-section">
+
+        <span>
+          Don't have an account?
+        </span>
+
+        <a
+          href="#"
+          (click)="$event.preventDefault()"
+        >
+          Create Account
+        </a>
+
+      </div>
+
+
+
+      <!-- ============================================
+           SECURITY
+      ============================================= -->
+
+      <div class="security">
+
+        <span class="security-icon">
+          🔐
+        </span>
+
+        <span>
+          Your data is protected with secure encryption.
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==============================================
+         RIGHT SIDE INFO
+    =============================================== -->
+
+    <div class="login-info">
+
+
+      <div class="info-badge">
+
+        <span class="info-dot"></span>
+
+        Smart Billing Platform
+
+      </div>
+
+
+      <h2>
+
+        Manage your business.
+
+        <span>
+          Bill smarter.
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        Create invoices, manage customers,
+        track payments and simplify GST billing
+        from one powerful platform.
+
+      </p>
+
+
+      <!-- FEATURES -->
+
+      <div class="info-features">
+
+
+        <div class="info-feature">
+
+          <div class="feature-check">
+            ✓
+          </div>
+
+          <div>
+
+            <strong>
+              Easy Invoicing
+            </strong>
+
+            <span>
+              Create professional invoices quickly.
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="info-feature">
+
+          <div class="feature-check">
+            ✓
+          </div>
+
+          <div>
+
+            <strong>
+              GST Ready
+            </strong>
+
+            <span>
+              Automatic GST calculations.
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="info-feature">
+
+          <div class="feature-check">
+            ✓
+          </div>
+
+          <div>
+
+            <strong>
+              Business Reports
+            </strong>
+
+            <span>
+              Understand your business performance.
+            </span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- MINI DASHBOARD -->
+
+      <div class="mini-dashboard">
+
+        <div class="mini-header">
+
+          <span>
+            Revenue
+          </span>
+
+          <span>
+            2026
+          </span>
+
+        </div>
+
+
+        <div class="mini-revenue">
+          ₹2,48,560
+        </div>
+
+
+        <div class="mini-growth">
+          ↑ 18.5% this month
+        </div>
+
+
+        <div class="mini-chart">
+
+          <span style="height: 35%"></span>
+          <span style="height: 50%"></span>
+          <span style="height: 43%"></span>
+          <span style="height: 65%"></span>
+          <span style="height: 55%"></span>
+          <span style="height: 85%"></span>
+          <span style="height: 72%"></span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ================================================
+       FOOTER
+  ================================================= -->
+
+  <footer class="login-footer">
+
+    © 2026 BillPro. All rights reserved.
+
+  </footer>
+
+</div>
