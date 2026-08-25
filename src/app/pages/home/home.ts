@@ -4,6 +4,14 @@ import { Component } from '@angular/core';
   selector: 'app-home',
   imports: [],
   templateUrl: './home.html',
-  styleUrl: './home.css',
+  styleUrl: './home.css'
 })
-export class Home {}
+export class Home {
+
+  showNotice = true;
+
+  closeNotice(): void {
+    this.showNotice = false;
+  }
+
+}
