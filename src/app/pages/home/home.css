@@ -790,7 +790,7 @@
 
   position: relative;
 
-  z-index: 20;
+  z-index: 100000;
 
   background:
     rgba(5, 8, 22, 0.65);
@@ -920,6 +920,14 @@
 .login-btn:hover {
   background:
     rgba(255, 255, 255, 0.08);
+}
+
+/* LOGIN BUTTON MUST STAY CLICKABLE */
+.login-btn {
+  position: relative;
+  z-index: 100001;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .start-btn {
@@ -2081,82 +2089,55 @@ footer {
    MOBILE
 ========================================================= */
 
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 600px) {
 
-  /* POPUP */
+  /* NAVBAR */
 
-  .notice-overlay {
-    padding:
-      15px;
+  .navbar {
+    height: 68px;
+
+    padding: 0 16px;
+
+    z-index: 100000;
   }
 
-  .notice-board {
-    max-width:
-      100%;
-
-    padding:
-      38px 22px 30px;
-
-    border-radius:
-      20px;
+  .logo {
+    font-size: 19px;
   }
 
-  .close-btn {
-    width:
-      34px;
-
-    height:
-      34px;
-
-    top:
-      10px;
-
-    right:
-      10px;
-
-    font-size:
-      21px;
+  .logo-icon {
+    width: 35px;
+    height: 35px;
   }
 
-  .construction-icon {
-    width:
-      65px;
+  /* LOGIN BUTTON - KEEP VISIBLE */
 
-    height:
-      65px;
+  .login-btn {
+    display: inline-flex;
 
-    font-size:
-      33px;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 12px;
+
+    font-size: 11px;
+
+    position: relative;
+
+    z-index: 100001;
   }
 
-  .notice-badge {
-    font-size:
-      8px;
+  .start-btn {
+    padding: 9px 13px;
 
-    letter-spacing:
-      1px;
+    font-size: 11px;
   }
 
-  .notice-board h2 {
-    font-size:
-      30px;
-
-    letter-spacing:
-      -1px;
-  }
-
-  .notice-description {
-    font-size:
-      13px;
-
-    line-height:
-      1.7;
-  }
-
-  .continue-btn {
-    width:
-      100%;
-  }
+}
 
 
   /* NAVBAR */
@@ -2183,16 +2164,24 @@ footer {
   }
 
   .login-btn {
-    display:
-      none;
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 12px;
+
+    font-size: 11px;
+
+    position: relative;
+
+    z-index: 100001;
+
+    white-space: nowrap;
   }
 
   .start-btn {
-    padding:
-      9px 13px;
-
-    font-size:
-      11px;
+    display: none;
   }
 
 
@@ -2391,7 +2380,7 @@ footer {
       wrap;
   }
 
-}
+
 
 
 /* =========================================================
