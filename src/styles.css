@@ -1,17 +1,54 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100%;
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden;
-  background: #050816;
-}
+/* =========================================================
+   GLOBAL RESET — SINGLE SCROLL SOURCE OF TRUTH
+   Only html (or body) owns the scrollbar. Nothing else
+   in the ancestor chain should set overflow-y: auto/scroll
+   or a fixed height.
+========================================================= */
 
 * {
   box-sizing: border-box;
-}/* You can add global styles to this file, and also import other style files */
+}
+
+html {
+  height: auto;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: auto;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;   /* <-- the ONE scrollbar for the whole app */
+
+  background: #030b1b; /* prevents white flash outside .register-page */
+}
+
+/* Angular inserts this automatically — must not clip or scroll */
+app-root {
+  display: block;
+
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: visible;
+}
+
+/* router-outlet is a comment node, but whatever sits right after it
+   (your routed component's host) must never get its own height/scroll */
+router-outlet + * {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  overflow: visible;
+}
