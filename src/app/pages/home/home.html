@@ -19,7 +19,10 @@
 
     <!-- LOGO -->
 
-    <a class="brand" href="javascript:void(0)">
+    <a
+      class="brand"
+      routerLink="/"
+    >
 
       <div class="brand-logo">
         B
@@ -37,9 +40,8 @@
     <nav class="nav-menu">
 
       <a
-        href="javascript:void(0)"
+        routerLink="/"
         class="active"
-        (click)="scrollTo('home')"
       >
         Home
       </a>
@@ -64,6 +66,11 @@
       >
         About
       </a>
+       <a
+    routerLink="/contact"
+  >
+    Contact
+  </a>
 
     </nav>
 
@@ -670,9 +677,14 @@
 
   <footer>
 
+    <!-- FOOTER BRAND -->
+
     <div class="footer-brand">
 
-      <div class="brand">
+      <a
+        class="brand"
+        routerLink="/"
+      >
 
         <div class="brand-logo">
           B
@@ -682,7 +694,7 @@
           Bill<span>Pro</span>
         </div>
 
-      </div>
+      </a>
 
       <p>
         Smarter billing for modern businesses.
@@ -691,17 +703,19 @@
     </div>
 
 
+    <!-- FOOTER LINKS -->
+
     <div class="footer-links">
 
-      <a href="javascript:void(0)">
+      <a routerLink="/privacy">
         Privacy
       </a>
 
-      <a href="javascript:void(0)">
+      <a routerLink="/terms">
         Terms
       </a>
 
-      <a href="javascript:void(0)">
+      <a routerLink="/contact">
         Contact
       </a>
 
