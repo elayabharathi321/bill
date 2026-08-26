@@ -51,6 +51,6 @@ export class Register {
 
     console.log('Registration Data:', this.registerData);
 
-    alert('Registration successful!');
+    alert('Please Wait Under Development');
   }
 }
