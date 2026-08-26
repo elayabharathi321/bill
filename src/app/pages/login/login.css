@@ -1480,8 +1480,17 @@
 @media (max-width: 380px) {
 
   .back-home {
-    display:
-      none;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    font-size: 11px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+
+    color: #9ca3af !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .login-card {
