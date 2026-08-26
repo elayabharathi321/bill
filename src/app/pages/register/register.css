@@ -2157,3 +2157,78 @@
     transition: none !important;
   }
 }
+
+/* =========================================================
+   REGISTER PAGE - MOBILE: FORM ONLY
+   Hide the complete left information section on phones.
+   Desktop is NOT changed.
+========================================================= */
+
+@media (max-width: 650px) {
+
+  /* Hide:
+     - Start managing your business smarter
+     - Description
+     - Easy Invoicing
+     - GST Ready
+     - Business Management
+     - Business Overview
+     - ₹2,48,560
+     - Graph
+  */
+  .register-info {
+    display: none !important;
+  }
+
+  /* Registration card becomes the only main content */
+  .register-container {
+    display: block !important;
+
+    width: calc(100% - 20px) !important;
+    max-width: 520px !important;
+    min-width: 0 !important;
+
+    margin: 0 auto !important;
+
+    padding: 20px 0 30px !important;
+  }
+
+  .register-card {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+  }
+
+}
+
+
+/* =========================================================
+   360px / SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .register-info {
+    display: none !important;
+  }
+
+  .register-container {
+    width: calc(100% - 16px) !important;
+    max-width: 520px !important;
+
+    margin: 0 auto !important;
+
+    padding:
+      16px 0 25px !important;
+  }
+
+  .register-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+}
