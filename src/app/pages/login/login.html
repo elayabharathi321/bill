@@ -261,20 +261,24 @@
            REGISTER
       ============================================= -->
 
-      <div class="register-section">
+      <!-- ============================================
+     REGISTER
+============================================= -->
 
-        <span>
-          Don't have an account?
-        </span>
+<div class="register-section">
 
-        <a
-          href="#"
-          (click)="$event.preventDefault()"
-        >
-          Create Account
-        </a>
+  <span>
+    Don't have an account?
+  </span>
 
-      </div>
+  <a
+    routerLink="/register"
+    class="create-account-link"
+  >
+    Create Account
+  </a>
+
+</div>
 
 
 

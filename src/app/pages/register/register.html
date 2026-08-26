@@ -1,0 +1,567 @@
+<div class="register-page">
+
+  <!-- BACKGROUND -->
+  <div class="bg-grid"></div>
+
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <div class="glow glow-3"></div>
+
+
+  <!-- HEADER -->
+  <header class="register-header">
+
+    <!-- HOME ROUTE -->
+    <a
+      routerLink="/"
+      class="brand"
+    >
+
+      <div class="brand-icon">
+        B
+      </div>
+
+      <span>
+        Bill<span>Pro</span>
+      </span>
+
+    </a>
+
+
+    <!-- HOME ROUTE -->
+    <a
+      routerLink="/"
+      class="back-home"
+    >
+      ← Back to Home
+    </a>
+
+  </header>
+
+
+
+  <!-- MAIN -->
+  <main class="register-container">
+
+
+    <!-- LEFT INFORMATION -->
+    <div class="register-info">
+
+      <div class="info-badge">
+
+        <span class="info-dot"></span>
+
+        Smart Billing Platform
+
+      </div>
+
+
+      <h1>
+
+        Start managing your
+
+        <span>
+          business smarter.
+        </span>
+
+      </h1>
+
+
+      <p>
+
+        Create your BillPro account and simplify
+        invoicing, GST billing, customers,
+        payments and business reports.
+
+      </p>
+
+
+      <!-- FEATURES -->
+      <div class="info-features">
+
+        <div class="info-feature">
+
+          <div class="feature-check">
+            ✓
+          </div>
+
+          <div>
+
+            <strong>
+              Easy Invoicing
+            </strong>
+
+            <span>
+              Create professional invoices quickly.
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="info-feature">
+
+          <div class="feature-check">
+            ✓
+          </div>
+
+          <div>
+
+            <strong>
+              GST Ready
+            </strong>
+
+            <span>
+              Manage CGST, SGST and IGST easily.
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="info-feature">
+
+          <div class="feature-check">
+            ✓
+          </div>
+
+          <div>
+
+            <strong>
+              Business Management
+            </strong>
+
+            <span>
+              Manage users, customers and payments.
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- MINI DASHBOARD -->
+
+      <div class="mini-dashboard">
+
+        <div class="mini-header">
+
+          <span>
+            Business Overview
+          </span>
+
+          <span>
+            2026
+          </span>
+
+        </div>
+
+
+        <div class="mini-revenue">
+          ₹2,48,560
+        </div>
+
+
+        <div class="mini-growth">
+          ↑ 18.5% this month
+        </div>
+
+
+        <div class="mini-chart">
+
+          <span style="height:35%"></span>
+          <span style="height:50%"></span>
+          <span style="height:43%"></span>
+          <span style="height:65%"></span>
+          <span style="height:55%"></span>
+          <span style="height:85%"></span>
+          <span style="height:72%"></span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- REGISTER CARD -->
+
+    <div class="register-card">
+
+      <div class="card-header">
+
+        <div class="welcome-icon">
+          ✦
+        </div>
+
+        <h2>
+          Create your account
+        </h2>
+
+        <p>
+          Register your organisation to get started.
+        </p>
+
+      </div>
+
+
+
+      <!-- FORM -->
+
+      <form
+        (ngSubmit)="register()"
+        #registerForm="ngForm"
+      >
+
+
+        <!-- COMPANY -->
+
+        <div class="form-group">
+
+          <label for="companyName">
+            Company Name
+            <span>*</span>
+          </label>
+
+          <div class="input-wrapper">
+
+            <span class="input-icon">
+              ◈
+            </span>
+
+            <input
+              id="companyName"
+              type="text"
+              name="companyName"
+              [(ngModel)]="registerData.companyName"
+              placeholder="Enter company name"
+              required
+            />
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ADMIN -->
+
+        <div class="form-group">
+
+          <label for="adminName">
+            Admin Name
+            <span>*</span>
+          </label>
+
+          <div class="input-wrapper">
+
+            <span class="input-icon">
+              ◉
+            </span>
+
+            <input
+              id="adminName"
+              type="text"
+              name="adminName"
+              [(ngModel)]="registerData.adminName"
+              placeholder="Enter admin name"
+              required
+            />
+
+          </div>
+
+        </div>
+
+
+
+        <!-- EMAIL + MOBILE -->
+
+        <div class="two-column">
+
+          <div class="form-group">
+
+            <label for="email">
+              Business Email
+              <span>*</span>
+            </label>
+
+            <div class="input-wrapper">
+
+              <span class="input-icon">
+                ✉
+              </span>
+
+              <input
+                id="email"
+                type="email"
+                name="email"
+                [(ngModel)]="registerData.email"
+                placeholder="company@example.com"
+                required
+              />
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="mobile">
+              Mobile Number
+              <span>*</span>
+            </label>
+
+            <div class="input-wrapper">
+
+              <span class="input-icon">
+                ☎
+              </span>
+
+              <input
+                id="mobile"
+                type="tel"
+                name="mobile"
+                [(ngModel)]="registerData.mobile"
+                placeholder="Enter mobile number"
+                required
+              />
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- GST -->
+
+        <div class="form-group">
+
+          <label for="gstNumber">
+
+            GST Number
+
+            <small>
+              Optional
+            </small>
+
+          </label>
+
+          <div class="input-wrapper">
+
+            <span class="input-icon">
+              %
+            </span>
+
+            <input
+              id="gstNumber"
+              type="text"
+              name="gstNumber"
+              [(ngModel)]="registerData.gstNumber"
+              placeholder="Enter GST number"
+            />
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PASSWORD -->
+
+        <div class="two-column">
+
+          <div class="form-group">
+
+            <label for="password">
+              Password
+              <span>*</span>
+            </label>
+
+            <div class="input-wrapper">
+
+              <span class="input-icon">
+                🔒
+              </span>
+
+              <input
+                id="password"
+                [type]="showPassword ? 'text' : 'password'"
+                name="password"
+                [(ngModel)]="registerData.password"
+                placeholder="Create password"
+                required
+              />
+
+              <button
+                type="button"
+                class="password-toggle"
+                (click)="showPassword = !showPassword"
+              >
+                {{ showPassword ? '◉' : '◌' }}
+              </button>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- CONFIRM PASSWORD -->
+
+          <div class="form-group">
+
+            <label for="confirmPassword">
+              Confirm Password
+              <span>*</span>
+            </label>
+
+            <div class="input-wrapper">
+
+              <span class="input-icon">
+                🔒
+              </span>
+
+              <input
+                id="confirmPassword"
+                [type]="showConfirmPassword ? 'text' : 'password'"
+                name="confirmPassword"
+                [(ngModel)]="registerData.confirmPassword"
+                placeholder="Confirm password"
+                required
+              />
+
+              <button
+                type="button"
+                class="password-toggle"
+                (click)="showConfirmPassword = !showConfirmPassword"
+              >
+                {{ showConfirmPassword ? '◉' : '◌' }}
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- TERMS -->
+
+        <div class="terms">
+
+          <label class="checkbox-label">
+
+            <input
+              type="checkbox"
+              name="terms"
+              [(ngModel)]="registerData.terms"
+              required
+            />
+
+          </label>
+
+          <p>
+
+            I agree to the
+
+            <!-- TERMS ROUTE -->
+            <a
+              routerLink="/terms"
+            >
+              Terms & Conditions
+            </a>
+
+            and
+
+            <!-- PRIVACY ROUTE -->
+            <a
+              routerLink="/privacy"
+            >
+              Privacy Policy
+            </a>
+
+          </p>
+
+        </div>
+
+
+
+        <!-- REGISTER BUTTON -->
+
+        <button
+          type="submit"
+          class="register-button"
+          [disabled]="!registerForm.valid"
+        >
+
+          <span>
+            Create Account
+          </span>
+
+          <span class="button-arrow">
+            →
+          </span>
+
+        </button>
+
+      </form>
+
+
+
+      <!-- LOGIN ROUTE -->
+
+      <div class="login-section">
+
+        <span>
+          Already have an account?
+        </span>
+
+        <a
+          routerLink="/login"
+        >
+          Login
+        </a>
+
+      </div>
+
+
+
+      <!-- SECURITY -->
+
+      <div class="security">
+
+        <span>
+          🔐
+        </span>
+
+        <span>
+          Your data is protected with secure encryption.
+        </span>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+
+  <footer class="register-footer">
+
+    © 2026 BillPro. All rights reserved.
+
+  </footer>
+
+</div>
