@@ -7,6 +7,7 @@ import { Privacy } from './pages/privacy/privacy';
 import { Terms } from './pages/terms/terms';
 import { Contact } from './pages/contact/contact';
 import { About } from './pages/about/about';
+import { ForgotPassword } from './pages/forgot-password/forgot-password';
 
 export const routes: Routes = [
 
@@ -41,6 +42,11 @@ export const routes: Routes = [
   {
     path: 'about',
     component: About
+
+  },
+  {
+    path: 'forget-password',
+    component: ForgotPassword
 
   },
 
