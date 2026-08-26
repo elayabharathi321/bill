@@ -6,6 +6,7 @@ import { Register } from './pages/register/register';
 import { Privacy } from './pages/privacy/privacy';
 import { Terms } from './pages/terms/terms';
 import { Contact } from './pages/contact/contact';
+import { About } from './pages/about/about';
 
 export const routes: Routes = [
 
@@ -36,6 +37,11 @@ export const routes: Routes = [
   {
     path: 'contact',
     component:Contact
+  },
+  {
+    path: 'about',
+    component: About
+
   },
 
   {
