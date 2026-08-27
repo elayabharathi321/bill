@@ -10,7 +10,6 @@ import { About } from './pages/about/about';
 import { ForgotPassword } from './pages/forgot-password/forgot-password';
 
 export const routes: Routes = [
-
   {
     path: '',
     component: Home
@@ -35,24 +34,31 @@ export const routes: Routes = [
     path: 'terms',
     component: Terms
   },
+
   {
     path: 'contact',
-    component:Contact
+    component: Contact
   },
+
   {
     path: 'about',
     component: About
-
   },
-  {
-    path: 'forget-password',
-    component: ForgotPassword
 
+  {
+    path: 'forgot-password',
+    component: ForgotPassword
+  },
+
+  {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./pages/dashboard/dashboard')
+        .then(m => m.Dashboard)
   },
 
   {
     path: '**',
     redirectTo: ''
   }
-
 ];

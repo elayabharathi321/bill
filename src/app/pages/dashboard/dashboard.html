@@ -1,0 +1,541 @@
+<div class="dashboard-shell">
+
+  <!-- SIDEBAR OVERLAY - MOBILE -->
+  @if (sidebarOpen) {
+    <div class="sidebar-overlay" (click)="toggleSidebar()"></div>
+  }
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" [class.sidebar-open]="sidebarOpen">
+
+    <!-- LOGO -->
+    <div class="brand">
+      <div class="brand-logo">B</div>
+
+      <div class="brand-text">
+        <span class="brand-name">BillPro</span>
+        <span class="brand-subtitle">Billing System</span>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="navigation">
+
+      <div class="nav-section-title">
+        MAIN MENU
+      </div>
+
+      <a class="nav-item active">
+        <span class="nav-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+          </svg>
+        </span>
+        <span>Dashboard</span>
+      </a>
+
+      <a class="nav-item">
+        <span class="nav-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0
+            1.1.9 2 2 2h14c1.1 0 2-.9
+            2-2V5c0-1.1-.9-2-2-2zm0
+            16H5V5h14v14z"/>
+            <path d="M7 7h10v2H7zm0 4h10v2H7zm0
+            4h6v2H7z"/>
+          </svg>
+        </span>
+        <span>Invoices</span>
+      </a>
+
+      <a class="nav-item">
+        <span class="nav-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 8h-3V4H3c-1.1 0-2 .9-2
+            2v11h2c0 1.66 1.34 3 3 3s3-1.34
+            3-3h6c0 1.66 1.34 3 3 3s3-1.34
+            3-3h2v-5l-3-4zM6 18.5c-.83
+            0-1.5-.67-1.5-1.5s.67-1.5
+            1.5-1.5 1.5.67 1.5 1.5-.67
+            1.5-1.5 1.5zM17 18.5c-.83
+            0-1.5-.67-1.5-1.5s.67-1.5
+            1.5-1.5 1.5.67 1.5 1.5-.67
+            1.5-1.5 1.5zM17 12V9.5h2.5l1.96
+            2.5H17z"/>
+          </svg>
+        </span>
+        <span>Products</span>
+      </a>
+
+      <a class="nav-item">
+        <span class="nav-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 3H5c-1.1 0-2 .9-2
+            2v14c0 1.1.9 2 2 2h14c1.1
+            0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5
+            19V5h14v14H5z"/>
+            <path d="M7 15l3-3 2 2 4-5 2 2v6H7z"/>
+          </svg>
+        </span>
+        <span>Reports</span>
+      </a>
+
+      <div class="nav-section-title settings-title">
+        SYSTEM
+      </div>
+
+      <a class="nav-item">
+        <span class="nav-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5z"/>
+          </svg>
+        </span>
+        <span>Settings</span>
+      </a>
+
+    </nav>
+
+    <!-- SIDEBAR BOTTOM -->
+    <div class="sidebar-bottom">
+
+      <div class="upgrade-card">
+        <div class="upgrade-icon">⚡</div>
+
+        <div>
+          <strong>Upgrade Plan</strong>
+          <p>Unlock more features</p>
+        </div>
+      </div>
+
+      <div class="sidebar-user">
+        <div class="user-avatar">A</div>
+
+        <div class="user-details">
+          <strong>Admin User</strong>
+          <span>Administrator</span>
+        </div>
+
+        <button class="logout-button" title="Logout">
+          ↪
+        </button>
+      </div>
+
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN AREA -->
+  <main class="main-content">
+
+    <!-- HEADER -->
+    <header class="top-header">
+
+      <div class="header-left">
+
+        <button
+          class="mobile-menu"
+          (click)="toggleSidebar()"
+          aria-label="Open menu">
+          ☰
+        </button>
+
+        <div class="page-title">
+          <h1>Dashboard</h1>
+          <p>Welcome back, Admin. Here's what's happening today.</p>
+        </div>
+
+      </div>
+
+      <div class="header-right">
+
+        <!-- SEARCH -->
+        <div class="search-box">
+          <svg viewBox="0 0 24 24">
+            <path d="M9.5 3a6.5 6.5 0 1 0
+            4.03 11.6l4.43 4.43 1.41-1.41
+            -4.43-4.43A6.5 6.5 0 0 0
+            9.5 3zm0 2a4.5 4.5 0 1 1
+            0 9 4.5 4.5 0 0 1 0-9z"/>
+          </svg>
+
+          <input
+            type="text"
+            placeholder="Search..."
+          />
+
+          <span class="search-shortcut">⌘ K</span>
+        </div>
+
+        <!-- NOTIFICATION -->
+        <button class="notification-button" title="Notifications">
+
+          <svg viewBox="0 0 24 24">
+            <path d="M12 22a2.5 2.5 0 0 0
+            2.45-2h-4.9A2.5 2.5 0 0
+            0 12 22zm7-6v-5c0-3.07-1.63-5.64-4.5-6.32V4
+            a2.5 2.5 0 0 0-5 0v.68C6.63
+            5.36 5 7.93 5 11v5l-2 2v1h18v-1l-2-2z"/>
+          </svg>
+
+          <span class="notification-dot"></span>
+
+        </button>
+
+        <!-- PROFILE -->
+        <div class="header-profile">
+
+          <div class="profile-avatar">
+            A
+          </div>
+
+          <div class="profile-info">
+            <strong>Admin User</strong>
+            <span>Administrator</span>
+          </div>
+
+          <span class="profile-arrow">⌄</span>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- DASHBOARD BODY -->
+    <div class="dashboard-body">
+
+      <!-- WELCOME -->
+      <section class="welcome-section">
+
+        <div>
+          <h2>Good morning, Admin 👋</h2>
+          <p>Here's an overview of your billing activity.</p>
+        </div>
+
+        <button class="create-invoice-button">
+          <span>+</span>
+          Create Invoice
+        </button>
+
+      </section>
+
+
+      <!-- STAT CARDS -->
+      <section class="stats-grid">
+
+        @for (stat of stats; track stat.title) {
+
+          <div class="stat-card">
+
+            <div class="stat-top">
+
+              <div class="stat-icon">
+                {{ stat.icon }}
+              </div>
+
+              <span
+                class="stat-change"
+                [class.negative]="stat.change.startsWith('-')">
+                {{ stat.change }}
+              </span>
+
+            </div>
+
+            <div class="stat-content">
+
+              <span class="stat-title">
+                {{ stat.title }}
+              </span>
+
+              <strong class="stat-value">
+                {{ stat.value }}
+              </strong>
+
+              <span class="stat-description">
+                {{ stat.description }}
+              </span>
+
+            </div>
+
+          </div>
+
+        }
+
+      </section>
+
+
+      <!-- MIDDLE SECTION -->
+      <section class="middle-grid">
+
+        <!-- REVENUE CHART -->
+        <div class="dashboard-card revenue-card">
+
+          <div class="card-header">
+
+            <div>
+              <h3>Revenue Overview</h3>
+              <p>Monthly revenue performance</p>
+            </div>
+
+            <select>
+              <option>Last 7 months</option>
+              <option>Last 6 months</option>
+              <option>This year</option>
+            </select>
+
+          </div>
+
+          <div class="chart-area">
+
+            <div class="chart-y-axis">
+              <span>₹50K</span>
+              <span>₹40K</span>
+              <span>₹30K</span>
+              <span>₹20K</span>
+              <span>₹10K</span>
+              <span>₹0</span>
+            </div>
+
+            <div class="chart">
+
+              <div class="grid-line line-1"></div>
+              <div class="grid-line line-2"></div>
+              <div class="grid-line line-3"></div>
+              <div class="grid-line line-4"></div>
+              <div class="grid-line line-5"></div>
+              <div class="grid-line line-6"></div>
+
+              <svg
+                class="revenue-line"
+                viewBox="0 0 700 240"
+                preserveAspectRatio="none">
+
+                <defs>
+                  <linearGradient
+                    id="chartGradient"
+                    x1="0"
+                    y1="0"
+                    x2="0"
+                    y2="1">
+
+                    <stop
+                      offset="0%"
+                      stop-opacity=".18"/>
+
+                    <stop
+                      offset="100%"
+                      stop-opacity="0"/>
+
+                  </linearGradient>
+                </defs>
+
+                <path
+                  class="chart-fill"
+                  d="M0 190
+                     C50 170 70 175 100 150
+                     C140 115 165 140 200 125
+                     C240 105 255 130 300 90
+                     C350 45 375 105 420 82
+                     C460 62 485 78 520 55
+                     C570 25 600 55 650 30
+                     C675 20 690 30 700 18
+                     L700 240 L0 240 Z"/>
+
+                <path
+                  class="chart-path"
+                  d="M0 190
+                     C50 170 70 175 100 150
+                     C140 115 165 140 200 125
+                     C240 105 255 130 300 90
+                     C350 45 375 105 420 82
+                     C460 62 485 78 520 55
+                     C570 25 600 55 650 30
+                     C675 20 690 30 700 18"/>
+
+                <circle cx="700" cy="18" r="5"/>
+
+              </svg>
+
+              <div class="chart-months">
+                <span>Feb</span>
+                <span>Mar</span>
+                <span>Apr</span>
+                <span>May</span>
+                <span>Jun</span>
+                <span>Jul</span>
+                <span>Aug</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- INVOICE STATUS -->
+        <div class="dashboard-card status-card">
+
+          <div class="card-header">
+
+            <div>
+              <h3>Invoice Status</h3>
+              <p>Current invoice breakdown</p>
+            </div>
+
+          </div>
+
+          <div class="status-content">
+
+            <div class="donut-wrapper">
+
+              <div class="donut">
+                <div class="donut-center">
+                  <strong>248</strong>
+                  <span>Total</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="status-list">
+
+              <div class="status-row">
+                <span>
+                  <i class="status-dot paid"></i>
+                  Paid
+                </span>
+                <strong>186</strong>
+              </div>
+
+              <div class="status-row">
+                <span>
+                  <i class="status-dot pending"></i>
+                  Pending
+                </span>
+                <strong>42</strong>
+              </div>
+
+              <div class="status-row">
+                <span>
+                  <i class="status-dot overdue"></i>
+                  Overdue
+                </span>
+                <strong>15</strong>
+              </div>
+
+              <div class="status-row">
+                <span>
+                  <i class="status-dot draft"></i>
+                  Draft
+                </span>
+                <strong>5</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- RECENT INVOICES -->
+      <section class="dashboard-card invoices-card">
+
+        <div class="card-header">
+
+          <div>
+            <h3>Recent Invoices</h3>
+            <p>Latest invoice activity</p>
+          </div>
+
+          <button class="view-all-button">
+            View All →
+          </button>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+          <table>
+
+            <thead>
+
+              <tr>
+                <th>Invoice</th>
+                <th>Client</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              @for (item of recentInvoices; track item.invoice) {
+
+                <tr>
+
+                  <td>
+                    <strong class="invoice-number">
+                      {{ item.invoice }}
+                    </strong>
+                  </td>
+
+                  <td>
+                    {{ item.client }}
+                  </td>
+
+                  <td>
+                    {{ item.date }}
+                  </td>
+
+                  <td>
+                    <strong>{{ item.amount }}</strong>
+                  </td>
+
+                  <td>
+
+                    <span
+                      class="status-badge"
+                      [class.paid-badge]="item.status === 'Paid'"
+                      [class.pending-badge]="item.status === 'Pending'"
+                      [class.overdue-badge]="item.status === 'Overdue'">
+
+                      <i></i>
+                      {{ item.status }}
+
+                    </span>
+
+                  </td>
+
+                  <td>
+                    <button class="action-button">
+                      ⋮
+                    </button>
+                  </td>
+
+                </tr>
+
+              }
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+</div>
