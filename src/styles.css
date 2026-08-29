@@ -5,8 +5,31 @@
    or a fixed height.
 ========================================================= */
 
+/* Light Theme Variables */
+:root {
+  --primary-color: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --secondary-color: #059669;
+  --secondary-light: #10b981;
+  --secondary-dark: #047857;
+  --font-family: 'Inter', 'Roboto', sans-serif;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --background-light: #f9fafb;
+  --background-white: #ffffff;
+  --border-color: #e5e7eb;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
 * {
   box-sizing: border-box;
+  font-family: var(--font-family);
 }
 
 html {
@@ -14,6 +37,8 @@ html {
   min-height: 100%;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -21,11 +46,9 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-
   overflow-x: hidden;
-  overflow-y: auto;   /* <-- the ONE scrollbar for the whole app */
-
-  background: #030b1b; /* prevents white flash outside .register-page */
+  overflow-y: auto;
+  background: var(--background-white);
 }
 
 /* Angular inserts this automatically — must not clip or scroll */

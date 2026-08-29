@@ -1,2234 +1,750 @@
-/* =========================================================
-   BILLPRO REGISTER PAGE
-   RESPONSIVE / MOBILE FIXED VERSION
-========================================================= */
-
-
-/* =========================================================
-   GLOBAL BOX SIZING
-========================================================= */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-
-/* =========================================================
-   ANGULAR HOST
-========================================================= */
+﻿/* =====================================================
+    BILLPRO REGISTER PAGE
+ ===================================================== */
 
 :host {
-  display: block !important;
-
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-
-  height: auto !important;
-  min-height: 0 !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  overflow: visible !important;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
 }
 
-
-/* =========================================================
-   REGISTER PAGE
-========================================================= */
+* {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
 
 .register-page {
   position: relative;
-
-  display: block;
-
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
-  height: auto;
-  min-height: 0;
-
-  margin: 0;
-  padding: 0;
-
-  overflow-x: hidden;
-  overflow-y: visible;
-
-  color: #ffffff;
-
-  background:
-    radial-gradient(
-      circle at 5% 35%,
-      rgba(112, 53, 255, 0.20),
-      transparent 34%
-    ),
-    radial-gradient(
-      circle at 95% 45%,
-      rgba(0, 180, 255, 0.12),
-      transparent 34%
-    ),
-    linear-gradient(
-      135deg,
-      #170b3d 0%,
-      #09071e 48%,
-      #03162b 100%
-    );
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--text-primary);
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 32%, #f7f9fc 100%);
 }
-
-
-/* =========================================================
-   BACKGROUND GRID
-========================================================= */
 
 .bg-grid {
   position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
+  inset: 0;
   pointer-events: none;
-
   background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.035) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.035) 1px,
-      transparent 1px
-    );
-
-  background-size: 28px 28px;
-
-  opacity: 0.65;
-
+    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+  background-size: 55px 55px;
+  mask-image: linear-gradient(to bottom, black, transparent 92%);
   z-index: 0;
 }
-
-
-/* =========================================================
-   BACKGROUND GLOWS
-========================================================= */
 
 .glow {
   position: absolute;
-
   border-radius: 50%;
-
+  filter: blur(100px);
+  opacity: .12;
   pointer-events: none;
-
-  filter: blur(80px);
-
-  z-index: 0;
-
-  max-width: 100vw;
 }
 
 .glow-1 {
-  width: 320px;
-  height: 320px;
-
-  top: 220px;
-  left: -120px;
-
-  background: rgba(112, 50, 255, 0.18);
-
-  animation: glowFloat1 7s ease-in-out infinite;
+  width: 360px;
+  height: 360px;
+  left: -180px;
+  top: 200px;
+  background: #7c3aed;
 }
 
 .glow-2 {
-  width: 280px;
-  height: 280px;
-
-  top: 500px;
-  right: -100px;
-
-  background: rgba(0, 174, 255, 0.12);
-
-  animation: glowFloat2 9s ease-in-out infinite;
+  width: 320px;
+  height: 320px;
+  right: -120px;
+  top: 80px;
+  background: #2563eb;
 }
 
 .glow-3 {
-  width: 250px;
-  height: 250px;
-
-  bottom: 80px;
-  left: 42%;
-
-  background: rgba(132, 72, 255, 0.10);
-
-  animation: glowFloat3 8s ease-in-out infinite;
+  width: 280px;
+  height: 280px;
+  right: 20%;
+  bottom: -120px;
+  background: #06b6d4;
 }
-
-
-/* =========================================================
-   HEADER
-========================================================= */
 
 .register-header {
   position: relative;
-
-  z-index: 5;
-
-  display: flex;
-
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
+  z-index: 10;
+  width: min(1220px, 92%);
   height: 78px;
-  min-height: 78px;
-
-  margin: 0;
-  padding: 0 6%;
-
+  margin: 18px auto 0;
+  padding: 0 18px 0 22px;
+  display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background: rgba(3, 4, 22, 0.97);
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-
-  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-
-/* =========================================================
-   BRAND
-========================================================= */
-
 .brand {
-  display: inline-flex;
-
-  min-width: 0;
-
+  display: flex;
   align-items: center;
-
-  gap: 13px;
-
-  color: #ffffff;
-
+  gap: 11px;
   text-decoration: none;
-
-  cursor: pointer;
+  color: var(--text-primary) !important;
 }
 
 .brand-icon {
+  width: 42px;
+  height: 42px;
   display: flex;
-
-  width: 48px;
-  height: 48px;
-
-  min-width: 48px;
-
-  flex: 0 0 48px;
-
   align-items: center;
   justify-content: center;
-
-  border-radius: 14px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #7447ff,
-      #13bde9
-    );
-
+  border-radius: 12px;
   color: #ffffff;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 30px;
-
-  font-weight: 700;
-
-  box-shadow:
-    0 10px 30px rgba(91, 57, 255, 0.35);
+  font-size: 23px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary-color), #7c3aed);
+  box-shadow: 0 12px 22px rgba(37, 99, 235, 0.18);
 }
 
 .brand > span {
-  min-width: 0;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 27px;
-
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 850;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
 }
 
 .brand > span span {
-  color: #8d7cff;
+  color: var(--primary-color);
 }
 
+.register-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
 
-/* =========================================================
-   BACK HOME
-========================================================= */
+.register-nav a {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.register-nav a:hover,
+.register-nav a:active {
+  color: var(--primary-color);
+}
 
 .back-home {
-  flex-shrink: 0;
-
-  color: rgba(255, 255, 255, 0.62);
-
+  color: var(--text-secondary);
   font-size: 14px;
-
-  font-weight: 500;
-
+  font-weight: 700;
   text-decoration: none;
-
-  white-space: nowrap;
-
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+  transition: 0.25s ease;
 }
 
 .back-home:hover {
-  color: #ffffff;
-
+  color: var(--primary-color);
   transform: translateX(-3px);
 }
 
-
-/* =========================================================
-   MAIN CONTAINER
-========================================================= */
+.register-mobile-toggle,
+.register-mobile-button,
+.register-mobile-menu {
+  display: none;
+}
 
 .register-container {
   position: relative;
-
   z-index: 2;
-
-  display: grid;
-
-  width: min(1240px, calc(100% - 80px));
-  max-width: 1240px;
-
-  min-width: 0;
-
-  height: auto;
-
+  width: min(1220px, 92%);
+  min-height: calc(100vh - 150px);
   margin: 0 auto;
-
-  padding: 58px 0 55px;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1fr);
-
-  gap: 64px;
-
-  align-items: start;
-
-  overflow: visible;
+  padding: 62px 0 40px;
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  align-items: center;
+  gap: 44px;
 }
-
-
-/* =========================================================
-   LEFT INFORMATION
-========================================================= */
 
 .register-info {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
-  height: auto;
-
-  margin: 0;
-  padding: 8px 0 0;
-
-  overflow: visible;
+  padding: 34px 26px 26px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.06);
 }
-
-
-/* =========================================================
-   BADGE
-========================================================= */
 
 .info-badge {
   display: inline-flex;
-
-  max-width: 100%;
-
   align-items: center;
-
-  gap: 10px;
-
-  margin-bottom: 28px;
-
-  padding: 10px 16px;
-
-  border: 1px solid rgba(144, 76, 255, 0.45);
-
-  border-radius: 999px;
-
-  background: rgba(101, 50, 190, 0.12);
-
-  color: #cfc3ff;
-
-  font-size: 13px;
-
-  font-weight: 600;
+  gap: 9px;
+  padding: 9px 15px;
+  border-radius: 30px;
+  color: var(--primary-color);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .info-dot {
   width: 8px;
   height: 8px;
-
-  flex: 0 0 8px;
-
   border-radius: 50%;
-
-  background: #9b5cff;
-
-  box-shadow:
-    0 0 12px rgba(155, 92, 255, 0.8);
-
-  animation: dotPulse 2s ease-in-out infinite;
+  background: var(--primary-color);
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
 }
 
-
-/* =========================================================
-   MAIN HEADING
-========================================================= */
-
 .register-info h1 {
-  width: 100%;
-  max-width: 650px;
-
-  margin: 0 0 25px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: clamp(48px, 5vw, 74px);
-
-  line-height: 0.98;
-
+  max-width: 520px;
+  margin: 25px 0 20px;
+  color: var(--text-primary);
+  font-size: clamp(40px, 4vw, 60px);
+  line-height: 1.05;
   letter-spacing: -2.5px;
-
-  font-weight: 700;
-
-  color: #ffffff;
-
-  overflow-wrap: anywhere;
 }
 
 .register-info h1 span {
   display: block;
-
-  max-width: 100%;
-
-  background:
-    linear-gradient(
-      90deg,
-      #a57cff,
-      #42bdf4
-    );
-
+  background: linear-gradient(90deg, #2563eb, #7c3aed, #06b6d4);
   -webkit-background-clip: text;
   background-clip: text;
-
   -webkit-text-fill-color: transparent;
 }
 
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
 .register-info > p {
-  width: 100%;
-  max-width: 620px;
-
-  margin: 0 0 34px;
-
-  color: rgba(205, 198, 235, 0.78);
-
-  font-size: 16px;
-
-  line-height: 1.75;
-
-  overflow-wrap: break-word;
+  max-width: 530px;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.8;
 }
 
-
-/* =========================================================
-   FEATURES
-========================================================= */
-
 .info-features {
+  margin-top: 35px;
   display: flex;
-
-  width: 100%;
-  max-width: 100%;
-
   flex-direction: column;
-
-  gap: 21px;
-
-  margin-bottom: 35px;
+  gap: 20px;
 }
 
 .info-feature {
   display: flex;
-
-  width: 100%;
-  max-width: 100%;
-
   align-items: center;
-
-  gap: 16px;
-
-  min-width: 0;
+  gap: 13px;
 }
 
 .feature-check {
-  display: flex;
-
-  width: 38px;
-  height: 38px;
-
-  flex: 0 0 38px;
-
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid rgba(27, 188, 255, 0.55);
-
-  border-radius: 50%;
-
-  background: rgba(20, 120, 255, 0.08);
-
-  color: #39d8ff;
-
-  font-size: 19px;
-
-  font-weight: 700;
-
-  box-shadow:
-    0 0 18px rgba(20, 168, 255, 0.12);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.info-feature:hover .feature-check {
-  transform: scale(1.08);
-
-  box-shadow:
-    0 0 25px rgba(20, 168, 255, 0.25);
-}
-
-.info-feature > div:last-child {
-  display: flex;
-
-  min-width: 0;
-
-  flex-direction: column;
-
-  gap: 3px;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--secondary-color);
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.15);
 }
 
 .info-feature strong {
-  color: #ffffff;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 17px;
-
-  font-weight: 700;
+  display: block;
+  color: var(--text-primary);
+  font-size: 13px;
 }
 
 .info-feature span {
-  color: rgba(186, 178, 221, 0.72);
-
-  font-size: 13px;
-
-  line-height: 1.4;
-
-  overflow-wrap: break-word;
+  display: block;
+  margin-top: 3px;
+  color: var(--text-secondary);
+  font-size: 11px;
 }
-
-
-/* =========================================================
-   MINI DASHBOARD
-========================================================= */
 
 .mini-dashboard {
-  width: 100%;
-  max-width: 560px;
-  min-width: 0;
-
-  height: 235px;
-
-  margin-top: 30px;
-
-  padding: 27px 28px 24px;
-
-  border: 1px solid rgba(150, 145, 220, 0.20);
-
-  border-radius: 22px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(25, 29, 57, 0.94),
-      rgba(11, 13, 34, 0.98)
-    );
-
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035);
-
-  overflow: hidden;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  width: 330px;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
 }
-
-.mini-dashboard:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 25px 65px rgba(0, 0, 0, 0.34),
-    0 0 35px rgba(100, 60, 255, 0.08);
-}
-
-
-/* =========================================================
-   GRAPH HEADER
-========================================================= */
 
 .mini-header {
   display: flex;
-
-  width: 100%;
-
-  align-items: center;
   justify-content: space-between;
-
-  margin-bottom: 7px;
-
-  color: rgba(210, 211, 230, 0.62);
-
-  font-family:
-    Inter,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
-
-  font-size: 12px;
-
-  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 700;
 }
 
-
-/* =========================================================
-   REVENUE
-========================================================= */
-
 .mini-revenue {
-  display: block;
-
-  width: 100%;
-
-  margin-top: 6px;
-
-  color: #ffffff;
-
-  font-family:
-    Inter,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
-
-  font-size: 40px;
-
-  line-height: 1.12;
-
+  margin-top: 10px;
+  color: var(--text-primary);
+  font-size: 25px;
   font-weight: 800;
-
-  letter-spacing: -1.5px;
-
-  white-space: nowrap;
-
-  font-variant-numeric: tabular-nums;
-
-  -webkit-font-smoothing: antialiased;
-
-  text-shadow:
-    0 2px 12px rgba(255, 255, 255, 0.08);
 }
 
 .mini-growth {
-  margin-top: 5px;
-
-  color: #19d6a0;
-
-  font-family:
-    Inter,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
-
-  font-size: 12px;
-
-  line-height: 1.4;
-
+  margin-top: 4px;
+  color: var(--secondary-color);
+  font-size: 10px;
   font-weight: 700;
 }
 
-
-/* =========================================================
-   GRAPH
-========================================================= */
-
 .mini-chart {
+  height: 70px;
+  margin-top: 20px;
   display: flex;
-
-  width: 100%;
-  max-width: 100%;
-
-  height: 105px;
-
-  margin-top: 18px;
-
-  align-items: flex-end;
-
-  gap: 20px;
-
-  overflow: hidden;
+  align-items: end;
+  justify-content: space-around;
+  gap: 7px;
 }
 
 .mini-chart span {
-  display: block;
-
-  flex: 1 1 0;
-
-  min-width: 0;
-
-  height: 0;
-
-  border-radius: 7px 7px 2px 2px;
-
-  background:
-    linear-gradient(
-      to top,
-      #5031d7 0%,
-      #6948e8 45%,
-      #aa84ff 100%
-    );
-
-  box-shadow:
-    0 0 16px rgba(112, 67, 255, 0.20),
-    inset 0 1px 0 rgba(255, 255, 255, 0.22);
-
-  transform-origin: bottom;
-
-  animation:
-    graphBarGrow 1.1s cubic-bezier(0.22, 1, 0.36, 1)
-    forwards,
-    graphBarPulse 3s ease-in-out infinite;
-
-  transition:
-    filter 0.25s ease,
-    transform 0.25s ease;
+  width: 25px;
+  border-radius: 5px 5px 1px 1px;
+  background: linear-gradient(to top, #1d4ed8, #60a5fa, #93c5fd);
+  animation: chartAnimation 1.5s ease forwards;
 }
 
-.mini-chart span:nth-child(1) {
-  --bar-height: 35%;
-  animation-delay: 0s, 1.2s;
+@keyframes chartAnimation {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
 }
-
-.mini-chart span:nth-child(2) {
-  --bar-height: 50%;
-  animation-delay: 0.12s, 1.35s;
-}
-
-.mini-chart span:nth-child(3) {
-  --bar-height: 43%;
-  animation-delay: 0.24s, 1.5s;
-}
-
-.mini-chart span:nth-child(4) {
-  --bar-height: 65%;
-  animation-delay: 0.36s, 1.65s;
-}
-
-.mini-chart span:nth-child(5) {
-  --bar-height: 55%;
-  animation-delay: 0.48s, 1.8s;
-}
-
-.mini-chart span:nth-child(6) {
-  --bar-height: 85%;
-  animation-delay: 0.60s, 1.95s;
-}
-
-.mini-chart span:nth-child(7) {
-  --bar-height: 72%;
-  animation-delay: 0.72s, 2.1s;
-}
-
-.mini-chart span:hover {
-  transform:
-    scaleY(1.035)
-    scaleX(1.04);
-
-  filter:
-    brightness(1.18)
-    drop-shadow(0 0 10px rgba(142, 100, 255, 0.45));
-}
-
-
-/* =========================================================
-   REGISTER CARD
-========================================================= */
 
 .register-card {
   width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
-  height: auto;
-
-  margin: 0;
-
-  padding: 35px 40px 30px;
-
-  border: 1px solid rgba(157, 153, 211, 0.18);
-
-  border-radius: 27px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(24, 27, 52, 0.96),
-      rgba(8, 10, 29, 0.98)
-    );
-
-  box-shadow:
-    0 25px 70px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
-
-  overflow: visible;
+  max-width: 520px;
+  margin: auto;
+  padding: 36px 30px 28px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-
-/* =========================================================
-   CARD HEADER
-========================================================= */
-
 .card-header {
-  width: 100%;
-  max-width: 100%;
-
   text-align: center;
-
-  margin-bottom: 27px;
+  margin-bottom: 28px;
 }
 
 .welcome-icon {
-  display: flex;
-
-  width: 48px;
-  height: 48px;
-
-  margin: 0 auto 15px;
-
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid rgba(145, 78, 255, 0.55);
-
-  border-radius: 14px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(101, 52, 218, 0.25),
-      rgba(43, 23, 98, 0.35)
-    );
-
-  color: #d4c4ff;
-
-  font-size: 22px;
-
-  box-shadow:
-    0 10px 30px rgba(93, 48, 220, 0.15);
-
-  animation:
-    iconFloat 3s ease-in-out infinite;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  font-size: 28px;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.08);
 }
 
 .card-header h2 {
-  margin: 0 0 7px;
-
-  color: #ffffff;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 30px;
-
-  line-height: 1.2;
-
-  font-weight: 700;
+  margin: 0 0 10px;
+  color: var(--text-primary);
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .card-header p {
   margin: 0;
-
-  color: rgba(185, 181, 208, 0.65);
-
-  font-size: 13px;
-
-  line-height: 1.5;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-
-/* =========================================================
-   FORM
-========================================================= */
-
-.register-card form {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
-  height: auto;
-
-  margin: 0;
-  padding: 0;
-
-  overflow: visible;
+form {
+  display: grid;
+  gap: 18px;
 }
 
-
-/* =========================================================
-   FORM GROUP
-========================================================= */
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
 
 .form-group {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
-  margin: 0 0 17px;
+  display: grid;
+  gap: 8px;
 }
 
 .form-group label {
-  display: block;
-
-  width: 100%;
-
-  margin: 0 0 7px;
-
-  color: rgba(255, 255, 255, 0.86);
-
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-primary);
   font-size: 13px;
+  font-weight: 600;
+}
 
+.form-group label small {
+  color: var(--text-secondary);
+  font-size: 11px;
   font-weight: 600;
 }
 
 .form-group label span {
-  color: #a78bfa;
+  color: var(--error-color);
 }
-
-.form-group label small {
-  margin-left: 5px;
-
-  color: rgba(183, 180, 205, 0.50);
-
-  font-size: 11px;
-
-  font-weight: 400;
-}
-
-
-/* =========================================================
-   INPUT WRAPPER
-========================================================= */
 
 .input-wrapper {
-  position: relative;
-
-  display: flex;
-
   width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
+  height: 52px;
+  display: flex;
   align-items: center;
+  position: relative;
+  border-radius: 12px;
+  background: var(--background-light);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  transition: 0.25s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: rgba(37, 99, 235, 0.42);
+  background: rgba(37, 99, 235, 0.02);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
 }
 
 .input-icon {
-  position: absolute;
-
-  left: 15px;
-
-  z-index: 2;
-
-  color: rgba(186, 190, 218, 0.55);
-
-  font-size: 13px;
-
-  pointer-events: none;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7c8ca3;
+  font-size: 15px;
 }
 
-
-/* =========================================================
-   INPUT
-========================================================= */
-
 .input-wrapper input {
-  display: block;
-
   width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
-  height: 47px;
-
-  margin: 0;
-
-  padding: 0 42px 0 41px;
-
-  border: 1px solid rgba(139, 141, 180, 0.18);
-
-  border-radius: 11px;
-
+  height: 100%;
+  padding: 0 45px 0 0;
+  border: none;
   outline: none;
-
-  background:
-    rgba(4, 7, 22, 0.86);
-
-  color: #ffffff;
-
-  font-family:
-    Inter,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
-
-  font-size: 13px;
-
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
+  color: var(--text-primary);
+  background: transparent;
+  font-size: 14px;
 }
 
 .input-wrapper input::placeholder {
-  color: rgba(166, 169, 195, 0.45);
+  color: #94a3b8;
 }
-
-.input-wrapper input:hover {
-  border-color: rgba(139, 112, 255, 0.30);
-}
-
-.input-wrapper input:focus {
-  border-color: rgba(129, 91, 255, 0.72);
-
-  background:
-    rgba(8, 10, 29, 0.96);
-
-  box-shadow:
-    0 0 0 3px rgba(115, 76, 255, 0.10),
-    0 0 25px rgba(94, 55, 255, 0.08);
-}
-
-
-/* =========================================================
-   TWO COLUMN FORM
-========================================================= */
-
-.two-column {
-  display: grid;
-
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1fr);
-
-  gap: 16px;
-}
-
-
-/* =========================================================
-   PASSWORD
-========================================================= */
 
 .password-toggle {
   position: absolute;
-
-  right: 13px;
-
-  display: flex;
-
-  width: 28px;
-  height: 28px;
-
-  align-items: center;
-  justify-content: center;
-
-  border: 0;
-
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: none;
   background: transparent;
-
-  color: rgba(190, 192, 220, 0.55);
-
+  color: #64748b;
   cursor: pointer;
-
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .password-toggle:hover {
-  color: #ffffff;
+  color: var(--text-primary);
 }
-
-
-/* =========================================================
-   TERMS
-========================================================= */
 
 .terms {
   display: flex;
-
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
-  margin: 4px 0 20px;
-
   align-items: flex-start;
-
   gap: 10px;
+  margin-top: 4px;
 }
 
-.terms .checkbox-label {
+.checkbox-label {
   display: flex;
-
-  width: 18px;
-  height: 18px;
-
-  flex: 0 0 18px;
-
-  margin: 1px 0 0;
-
-  cursor: pointer;
+  align-items: center;
+  margin-top: 2px;
 }
 
-.terms input {
+.checkbox-label input {
   width: 16px;
   height: 16px;
-
-  margin: 0;
-
-  accent-color: #7545ff;
-
-  cursor: pointer;
+  accent-color: var(--primary-color);
 }
 
 .terms p {
-  min-width: 0;
-
   margin: 0;
-
-  color: rgba(203, 200, 221, 0.68);
-
+  color: var(--text-secondary);
   font-size: 12px;
-
-  line-height: 1.5;
-
-  overflow-wrap: break-word;
+  line-height: 1.6;
 }
 
 .terms a {
-  color: #aa8aff;
-
+  color: var(--primary-color);
+  font-weight: 700;
   text-decoration: none;
 }
 
-.terms a:hover {
-  color: #c3adff;
-
-  text-decoration: underline;
-}
-
-
-/* =========================================================
-   BUTTON
-========================================================= */
-
 .register-button {
-  display: flex;
-
   width: 100%;
-  max-width: 100%;
-
-  height: 50px;
-
-  margin: 0;
-
-  padding: 0 20px;
-
+  height: 52px;
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  gap: 14px;
-
-  border: 0;
-
+  gap: 10px;
+  border: none;
   border-radius: 12px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #5724c8,
-      #5637df
-    );
-
   color: #ffffff;
-
-  font-family:
-    Inter,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
-
+  background: linear-gradient(135deg, var(--primary-color), #7c3aed);
   font-size: 14px;
-
   font-weight: 700;
-
   cursor: pointer;
-
-  box-shadow:
-    0 12px 30px rgba(91, 48, 220, 0.22);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    opacity 0.2s ease;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.18);
+  transition: 0.25s ease;
 }
 
 .register-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 16px 35px rgba(91, 48, 220, 0.32);
-}
-
-.register-button:active:not(:disabled) {
-  transform: translateY(0);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.25);
 }
 
 .register-button:disabled {
-  opacity: 0.48;
-
+  opacity: 0.5;
   cursor: not-allowed;
-
   box-shadow: none;
 }
 
 .button-arrow {
-  font-size: 18px;
+  font-size: 17px;
+  transition: 0.25s ease;
 }
 
-
-/* =========================================================
-   LOGIN
-========================================================= */
+.register-button:hover .button-arrow {
+  transform: translateX(5px);
+}
 
 .login-section {
-  display: flex;
-
-  width: 100%;
-
-  margin-top: 20px;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 6px;
-
-  color: rgba(181, 180, 204, 0.65);
-
-  font-size: 12px;
-
+  margin-top: 18px;
   text-align: center;
+  color: var(--text-secondary);
+  font-size: 12px;
 }
 
 .login-section a {
-  color: #b49aff;
-
+  margin-left: 5px;
+  color: var(--primary-color);
   font-weight: 700;
-
   text-decoration: none;
 }
 
 .login-section a:hover {
-  color: #d0c2ff;
+  color: var(--primary-dark);
 }
-
-
-/* =========================================================
-   SECURITY
-========================================================= */
 
 .security {
-  display: flex;
-
-  width: 100%;
-
-  margin-top: 20px;
+  margin-top: 22px;
   padding-top: 18px;
-
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  gap: 8px;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-
-  color: rgba(165, 165, 190, 0.50);
-
-  font-size: 11px;
-
+  gap: 7px;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  color: var(--text-secondary);
+  font-size: 10px;
   text-align: center;
 }
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
 
 .register-footer {
   position: relative;
-
-  z-index: 3;
-
-  display: flex;
-
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
-  height: 52px;
-  min-height: 52px;
-
-  margin: 0;
-
-  padding: 0 20px;
-
-  align-items: center;
-  justify-content: center;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-
-  background:
-    rgba(3, 5, 22, 0.98);
-
-  color: rgba(190, 190, 211, 0.65);
-
-  font-size: 12px;
-
-  line-height: 1.4;
-
+  z-index: 5;
+  padding: 20px;
+  color: #64748b;
   text-align: center;
-
-  overflow: hidden;
+  font-size: 11px;
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(255, 255, 255, 0.5);
 }
-
-
-/* =========================================================
-   GRAPH ANIMATION
-========================================================= */
-
-@keyframes graphBarGrow {
-
-  0% {
-    height: 0;
-    opacity: 0;
-    transform: scaleY(0.15);
-  }
-
-  60% {
-    opacity: 1;
-  }
-
-  100% {
-    height: var(--bar-height);
-    opacity: 1;
-    transform: scaleY(1);
-  }
-}
-
-
-@keyframes graphBarPulse {
-
-  0% {
-    filter: brightness(1);
-  }
-
-  50% {
-    filter: brightness(1.08);
-  }
-
-  100% {
-    filter: brightness(1);
-  }
-}
-
-
-/* =========================================================
-   GLOW ANIMATIONS
-========================================================= */
-
-@keyframes glowFloat1 {
-
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  50% {
-    transform: translate3d(25px, -18px, 0);
-  }
-}
-
-
-@keyframes glowFloat2 {
-
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  50% {
-    transform: translate3d(-25px, 20px, 0);
-  }
-}
-
-
-@keyframes glowFloat3 {
-
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  50% {
-    transform: translate3d(15px, -15px, 0);
-  }
-}
-
-
-@keyframes dotPulse {
-
-  0%,
-  100% {
-    transform: scale(1);
-
-    box-shadow:
-      0 0 8px rgba(155, 92, 255, 0.5);
-  }
-
-  50% {
-    transform: scale(1.3);
-
-    box-shadow:
-      0 0 18px rgba(155, 92, 255, 0.95);
-  }
-}
-
-
-@keyframes iconFloat {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-4px);
-  }
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
 
 @media (max-width: 1000px) {
-
   .register-container {
-    width: calc(100% - 50px);
-    max-width: 900px;
-
-    grid-template-columns: minmax(0, 1fr);
-
-    gap: 50px;
-
-    padding: 45px 0;
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    padding: 60px 25px;
   }
 
   .register-info {
-    width: 100%;
-    max-width: 720px;
-
-    margin: 0 auto;
-  }
-
-  .mini-dashboard {
-    width: 100%;
-    max-width: 100%;
+    display: none;
   }
 
   .register-card {
-    width: 100%;
-    max-width: 720px;
-
-    margin: 0 auto;
+    max-width: 500px;
   }
 }
 
-
-/* =========================================================
-   MOBILE
-   650px AND BELOW
-========================================================= */
-
-@media (max-width: 650px) {
-
-  /* PAGE */
-  .register-page {
-    width: 100%;
-    max-width: 100%;
-
-    overflow-x: hidden;
-    overflow-y: visible;
-  }
-
-
-  /* HEADER */
+@media (max-width: 600px) {
   .register-header {
-    width: 100%;
-    max-width: 100%;
-
+    position: relative;
     height: 68px;
-    min-height: 68px;
-
-    padding: 0 16px;
-
-    overflow: hidden;
-  }
-
-
-  /* BRAND */
-  .brand {
-    gap: 8px;
-
-    min-width: 0;
-  }
-
-  .brand-icon {
-    width: 40px;
-    height: 40px;
-
-    min-width: 40px;
-
-    flex-basis: 40px;
-
-    border-radius: 11px;
-
-    font-size: 24px;
-  }
-
-  .brand > span {
-    font-size: 21px;
-
-    white-space: nowrap;
-  }
-
-
-  /* BACK HOME */
-  .back-home {
-    max-width: 110px;
-
-    font-size: 11px;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-    white-space: nowrap;
-  }
-
-
-  /* MAIN */
-  .register-container {
-    display: grid;
-
-    width: calc(100% - 24px);
-    max-width: calc(100% - 24px);
-    min-width: 0;
-
-    margin: 0 auto;
-
-    padding: 30px 0 35px;
-
-    grid-template-columns: minmax(0, 1fr);
-
-    gap: 32px;
-
+    padding: 0 17px;
+    gap: 10px;
     overflow: visible;
   }
 
+  .register-nav,
+  .back-home {
+    display: none;
+  }
 
-  /* LEFT */
-  .register-info {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
+  .brand {
+    font-size: 19px;
+  }
 
-    margin: 0;
+  .brand-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .register-mobile-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
     padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 
-
-  /* BADGE */
-  .info-badge {
-    max-width: 100%;
-
-    margin-bottom: 18px;
-
-    padding: 8px 12px;
-
-    font-size: 11px;
-  }
-
-
-  /* HEADING */
-  .register-info h1 {
-    width: 100%;
-    max-width: 100%;
-
-    margin: 0 0 18px;
-
-    font-size: clamp(38px, 12vw, 54px);
-
-    line-height: 1;
-
-    letter-spacing: -1.5px;
-
-    overflow-wrap: break-word;
-  }
-
-
-  /* DESCRIPTION */
-  .register-info > p {
-    width: 100%;
-    max-width: 100%;
-
-    margin-bottom: 25px;
-
-    font-size: 14px;
-
-    line-height: 1.6;
-
-    overflow-wrap: break-word;
-  }
-
-
-  /* FEATURES */
-  .info-features {
-    width: 100%;
-
-    gap: 16px;
-
-    margin-bottom: 25px;
-  }
-
-  .info-feature {
-    width: 100%;
-
-    gap: 12px;
-  }
-
-  .feature-check {
-    width: 34px;
-    height: 34px;
-
-    min-width: 34px;
-
-    flex-basis: 34px;
-
-    font-size: 16px;
-  }
-
-  .info-feature strong {
-    font-size: 15px;
-  }
-
-  .info-feature span {
-    font-size: 12px;
-  }
-
-
-  /* DASHBOARD */
-  .mini-dashboard {
-    display: block;
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    height: 205px;
-
-    margin-top: 25px;
-
-    padding: 20px 16px;
-
-    border-radius: 18px;
-  }
-
-
-  /* REVENUE */
-  .mini-revenue {
-    font-size: clamp(26px, 8vw, 32px);
-
-    letter-spacing: -0.8px;
-  }
-
-
-  /* GRAPH */
-  .mini-chart {
-    width: 100%;
-    max-width: 100%;
-
-    height: 88px;
-
-    gap: 7px;
-  }
-
-  .mini-chart span {
-    min-width: 0;
-
-    border-radius: 5px 5px 2px 2px;
-  }
-
-
-  /* REGISTER CARD */
-  .register-card {
-    display: block;
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    margin: 0;
-
-    padding: 27px 16px 23px;
-
-    border-radius: 19px;
-  }
-
-
-  /* CARD HEADER */
-  .card-header {
-    width: 100%;
-    max-width: 100%;
-
-    margin-bottom: 22px;
-  }
-
-  .welcome-icon {
-    width: 44px;
-    height: 44px;
-
-    margin-bottom: 12px;
-
+  .register-mobile-button {
+    position: relative;
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    margin-left: auto;
+    padding: 10px 9px;
     border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.26);
+    background: rgba(255, 255, 255, 0.72);
+    cursor: pointer;
+  }
+
+  .register-mobile-button span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 10px;
+    background: var(--text-primary);
+    transition: 0.25s ease;
+  }
+
+  .register-mobile-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: 0.25s ease;
+  }
+
+  .register-mobile-menu a {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 700;
+    background: rgba(148, 163, 184, 0.05);
+    text-decoration: none;
+  }
+
+  #register-mobile-menu-toggle:checked ~ .register-mobile-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  #register-mobile-menu-toggle:checked + .register-mobile-button span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  #register-mobile-menu-toggle:checked + .register-mobile-button span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #register-mobile-menu-toggle:checked + .register-mobile-button span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .register-container {
+    min-height: auto;
+    padding: 35px 15px 50px;
+  }
+
+  .register-card {
+    padding: 28px 20px;
+    border-radius: 20px;
   }
 
   .card-header h2 {
-    font-size: 25px;
-
-    line-height: 1.2;
+    font-size: 27px;
   }
 
   .card-header p {
     font-size: 12px;
   }
 
-
-  /* FORM */
-  .register-card form {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-
-  /* TWO COLUMNS -> ONE COLUMN */
-  .two-column {
-    display: grid;
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    grid-template-columns: minmax(0, 1fr);
-
-    gap: 0;
-  }
-
-
-  /* FORM GROUP */
-  .form-group {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    margin-bottom: 15px;
-  }
-
-
-  /* LABEL */
-  .form-group label {
-    font-size: 12px;
-
-    white-space: normal;
-  }
-
-
-  /* INPUT */
-  .input-wrapper {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .input-wrapper input {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    height: 46px;
-
-    padding-left: 38px;
-    padding-right: 38px;
-
-    font-size: 12px;
-  }
-
-
-  /* TERMS */
-  .terms {
-    width: 100%;
-    max-width: 100%;
-
-    gap: 8px;
-
-    margin-top: 3px;
-    margin-bottom: 18px;
-  }
-
-  .terms .checkbox-label {
-    flex: 0 0 18px;
-  }
-
-  .terms p {
-    min-width: 0;
-
-    font-size: 11px;
-
-    line-height: 1.45;
-  }
-
-
-  /* BUTTON */
-  .register-button {
-    width: 100%;
-    max-width: 100%;
-
-    height: 48px;
-
-    font-size: 13px;
-  }
-
-
-  /* LOGIN */
-  .login-section {
-    flex-wrap: wrap;
-
-    margin-top: 18px;
-
-    font-size: 11px;
-  }
-
-
-  /* SECURITY */
-  .security {
-    margin-top: 18px;
-    padding-top: 15px;
-
-    font-size: 10px;
-
-    line-height: 1.4;
-  }
-
-
-  /* FOOTER */
-  .register-footer {
-    width: 100%;
-    max-width: 100%;
-
-    height: 48px;
-    min-height: 48px;
-
-    padding: 0 12px;
-
-    font-size: 10px;
-
-    overflow: hidden;
-  }
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-   400px AND BELOW
-========================================================= */
-
-@media (max-width: 400px) {
-
-  .register-header {
-    padding: 0 12px;
-  }
-
-  .brand {
-    gap: 7px;
-  }
-
-  .brand-icon {
-    width: 37px;
-    height: 37px;
-
-    min-width: 37px;
-
-    flex-basis: 37px;
-
-    border-radius: 10px;
-
-    font-size: 22px;
-  }
-
-  .brand > span {
-    font-size: 19px;
-  }
-
-  .back-home {
-    max-width: 95px;
-
-    font-size: 10px;
-  }
-
-
-  .register-container {
-    width: calc(100% - 16px);
-    max-width: calc(100% - 16px);
-
-    padding: 25px 0 30px;
-
-    gap: 28px;
-  }
-
-
-  .register-info h1 {
-    font-size: 40px;
-
-    line-height: 0.98;
-
-    letter-spacing: -1px;
-  }
-
-
-  .register-info > p {
-    font-size: 13px;
-  }
-
-
-  .info-feature {
-    gap: 10px;
-  }
-
-  .feature-check {
-    width: 32px;
-    height: 32px;
-
-    min-width: 32px;
-
-    flex-basis: 32px;
-
-    font-size: 15px;
-  }
-
-  .info-feature strong {
-    font-size: 14px;
-  }
-
-  .info-feature span {
-    font-size: 11px;
-  }
-
-
-  .mini-dashboard {
-    height: 190px;
-
-    padding: 18px 13px;
-
-    border-radius: 16px;
-  }
-
-
-  .mini-revenue {
-    font-size: 27px;
-
-    letter-spacing: -0.5px;
-  }
-
-
-  .mini-chart {
-    height: 78px;
-
-    gap: 5px;
-  }
-
-
-  .register-card {
-    padding: 23px 13px 20px;
-
-    border-radius: 17px;
-  }
-
-
-  .card-header h2 {
-    font-size: 22px;
-  }
-
-
-  .input-wrapper input {
-    height: 44px;
-
-    font-size: 11px;
-  }
-
-
-  .terms p {
-    font-size: 10px;
-  }
-
-
-  .register-button {
-    height: 46px;
-
-    font-size: 12px;
-  }
-}
-
-
-/* =========================================================
-   EXTRA SMALL DEVICES
-   360px AND BELOW
-========================================================= */
-
-@media (max-width: 360px) {
-
-  .register-header {
-    padding: 0 9px;
-  }
-
-  .brand-icon {
-    width: 35px;
-    height: 35px;
-
-    min-width: 35px;
-
-    flex-basis: 35px;
-
-    font-size: 21px;
-  }
-
-  .brand > span {
-    font-size: 18px;
-  }
-
-  .back-home {
-    max-width: 88px;
-  }
-
-
-  .register-container {
-    width: calc(100% - 12px);
-    max-width: calc(100% - 12px);
-  }
-
-
-  .register-card {
-    padding-left: 11px;
-    padding-right: 11px;
-  }
-
-
-  .mini-dashboard {
-    padding-left: 11px;
-    padding-right: 11px;
-  }
-
-
-  .mini-revenue {
-    font-size: 25px;
-  }
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .mini-chart span,
-  .glow,
-  .info-dot,
   .welcome-icon {
-    animation: none !important;
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
   }
 
-  .mini-chart span {
-    height: var(--bar-height);
+  .two-column {
+    grid-template-columns: 1fr;
   }
 
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition: none !important;
+  .input-wrapper {
+    height: 50px;
+  }
+
+  .register-footer {
+    font-size: 9px;
   }
 }
 
-/* =========================================================
-   REGISTER PAGE - MOBILE: FORM ONLY
-   Hide the complete left information section on phones.
-   Desktop is NOT changed.
-========================================================= */
-
-@media (max-width: 650px) {
-
-  /* Hide:
-     - Start managing your business smarter
-     - Description
-     - Easy Invoicing
-     - GST Ready
-     - Business Management
-     - Business Overview
-     - ₹2,48,560
-     - Graph
-  */
-  .register-info {
-    display: none !important;
+@media (max-width: 380px) {
+  .back-home {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 11px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    color: var(--text-secondary) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
-
-  /* Registration card becomes the only main content */
-  .register-container {
-    display: block !important;
-
-    width: calc(100% - 20px) !important;
-    max-width: 520px !important;
-    min-width: 0 !important;
-
-    margin: 0 auto !important;
-
-    padding: 20px 0 30px !important;
-  }
-
-  .register-card {
-    display: block !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-
-    margin: 0 !important;
-  }
-
-}
-
-
-/* =========================================================
-   360px / SMALL MOBILE
-========================================================= */
-
-@media (max-width: 400px) {
-
-  .register-info {
-    display: none !important;
-  }
-
-  .register-container {
-    width: calc(100% - 16px) !important;
-    max-width: 520px !important;
-
-    margin: 0 auto !important;
-
-    padding:
-      16px 0 25px !important;
-  }
-
-  .register-card {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
 }

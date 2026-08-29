@@ -10,7 +10,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class Home {
 
-  showNotice = true;
+  showNotice = false;
 
   constructor(private router: Router) {}
 

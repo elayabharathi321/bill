@@ -11,7 +11,6 @@
   <!-- HEADER -->
   <header class="register-header">
 
-    <!-- HOME ROUTE -->
     <a
       routerLink="/"
       class="brand"
@@ -27,8 +26,35 @@
 
     </a>
 
+    <nav class="register-nav" aria-label="Main navigation">
+      <a routerLink="/">Home</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/contact">Contact</a>
+    </nav>
 
-    <!-- HOME ROUTE -->
+    <input
+      type="checkbox"
+      id="register-mobile-menu-toggle"
+      class="register-mobile-toggle"
+    />
+
+    <label
+      for="register-mobile-menu-toggle"
+      class="register-mobile-button"
+      aria-label="Open menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="register-mobile-menu" aria-label="Mobile navigation">
+      <a routerLink="/">Home</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/contact">Contact</a>
+      <a routerLink="/login">Login</a>
+    </nav>
+
     <a
       routerLink="/"
       class="back-home"

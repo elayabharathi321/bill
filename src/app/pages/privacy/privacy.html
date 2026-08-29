@@ -1,62 +1,95 @@
-<div class="legal-page">
+<div class="billpro-page">
 
-  <!-- HEADER -->
-  <header class="legal-header">
+  <div class="background-grid"></div>
+  <div class="glow glow-purple"></div>
+  <div class="glow glow-blue"></div>
+  <div class="glow glow-cyan"></div>
 
-    <a routerLink="/" class="brand">
+  <header class="navbar">
 
-      <div class="brand-icon">
-        B
-      </div>
-
-      <span>
-        Bill<span>Pro</span>
-      </span>
-
+    <a class="brand" routerLink="/">
+      <div class="brand-logo">B</div>
+      <div class="brand-name">Bill<span>Pro</span></div>
     </a>
 
-    <a routerLink="/register" class="back-link">
-      ← Back to Registration
-    </a>
+    <nav class="nav-menu" aria-label="Main navigation">
+      <a routerLink="/">Home</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/contact">Contact</a>
+      <a routerLink="/terms">Terms</a>
+      <a routerLink="/privacy" class="active">Privacy</a>
+    </nav>
+
+    <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle" />
+
+    <label for="mobile-menu-toggle" class="mobile-menu-button" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <div class="nav-actions">
+      <button type="button" class="nav-login" routerLink="/login">Login</button>
+      <button type="button" class="nav-start" routerLink="/register">
+        Get Started
+        <span>→</span>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" aria-label="Mobile navigation">
+      <a routerLink="/">Home</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/contact">Contact</a>
+      <a routerLink="/terms">Terms</a>
+      <a routerLink="/privacy">Privacy</a>
+      <a routerLink="/login">Login</a>
+    </nav>
 
   </header>
 
+  <main class="legal-content">
 
-  <!-- CONTENT -->
-  <main class="legal-container">
+    <section class="legal-hero">
+      <div class="legal-intro">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Privacy &amp; Security
+        </div>
 
-    <div class="legal-badge">
-      <span></span>
-      Privacy & Security
-    </div>
+        <h1>
+          Privacy <span>Policy</span>
+        </h1>
 
-    <h1>
-      Privacy <span>Policy</span>
-    </h1>
+        <p>
+          We respect your privacy and protect the information you share while using BillPro to run smarter, faster billing operations.
+        </p>
+      </div>
 
-    <p class="updated">
-      Last updated: August 2026
-    </p>
+      <div class="legal-summary-card">
+        <div class="summary-top">
+          <span class="summary-pill">Updated</span>
+          <strong>August 2026</strong>
+        </div>
 
+        <ul>
+          <li>Transparent data handling</li>
+          <li>Secure account practices</li>
+          <li>Responsible business data usage</li>
+        </ul>
+      </div>
+    </section>
 
     <section class="legal-card">
 
       <h2>1. Introduction</h2>
-
       <p>
-        Welcome to BillPro. We respect your privacy and are committed
-        to protecting the information you provide while using our
-        billing and business management platform.
+        Welcome to BillPro. We respect your privacy and are committed to protecting the information you provide while using our billing and business management platform.
       </p>
-
 
       <h2>2. Information We Collect</h2>
-
       <p>
-        When you create an account or use BillPro, we may collect
-        information such as:
+        When you create an account or use BillPro, we may collect information such as:
       </p>
-
       <ul>
         <li>Company or organisation name</li>
         <li>Administrator name</li>
@@ -67,83 +100,50 @@
         <li>Billing and invoice information</li>
       </ul>
 
-
       <h2>3. How We Use Your Information</h2>
-
       <p>
-        Your information may be used to provide and improve BillPro
-        services, manage your account, generate invoices, calculate
-        applicable taxes, provide business reports and maintain
-        platform security.
+        Your information may be used to provide and improve BillPro services, manage your account, generate invoices, calculate applicable taxes, provide business reports, and maintain platform security.
       </p>
-
 
       <h2>4. Data Security</h2>
-
       <p>
-        We take reasonable security measures to protect your
-        information from unauthorised access, modification,
-        disclosure or destruction.
+        We take reasonable security measures to protect your information from unauthorised access, modification, disclosure, or destruction.
       </p>
-
 
       <h2>5. Business Data</h2>
-
       <p>
-        Information entered into BillPro, including customers,
-        invoices, products, payments and tax information, is used
-        to provide the billing services requested by you.
+        Information entered into BillPro, including customers, invoices, products, payments, and tax information, is used to provide the billing services requested by you.
       </p>
-
 
       <h2>6. Cookies and Technology</h2>
-
       <p>
-        BillPro may use cookies or similar technologies to maintain
-        sessions, improve functionality and understand how the
-        platform is being used.
+        BillPro may use cookies or similar technologies to maintain sessions, improve functionality, and understand how the platform is being used.
       </p>
-
 
       <h2>7. Third-Party Services</h2>
-
       <p>
-        Some BillPro functionality may depend on third-party
-        services. Information shared with such services will be
-        handled according to their applicable privacy policies.
+        Some BillPro functionality may depend on third-party services. Information shared with such services will be handled according to their applicable privacy policies.
       </p>
-
 
       <h2>8. Your Responsibility</h2>
-
       <p>
-        You are responsible for keeping your account credentials
-        secure and for ensuring that the information entered into
-        your BillPro account is accurate and lawful.
+        You are responsible for keeping your account credentials secure and for ensuring that the information entered into your BillPro account is accurate and lawful.
       </p>
-
 
       <h2>9. Changes to This Policy</h2>
-
       <p>
-        We may update this Privacy Policy from time to time.
-        Changes will be reflected on this page.
+        We may update this Privacy Policy from time to time. Changes will be reflected on this page.
       </p>
 
-
       <h2>10. Contact</h2>
-
       <p>
-        If you have questions about this Privacy Policy or your
-        information, please contact the BillPro support team.
+        If you have questions about this Privacy Policy or your information, please contact the BillPro support team.
       </p>
 
     </section>
 
   </main>
 
-
-  <!-- FOOTER -->
   <footer class="legal-footer">
     © 2026 BillPro. All rights reserved.
   </footer>
