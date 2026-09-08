@@ -9,7 +9,7 @@ export default function DashboardPage() {
           <div>
             <span className="eyebrow">Overview</span>
             <h1 className="mt-3 font-display text-4xl font-bold">
-              Good morning, Admin.
+              Good morning, Admin...
             </h1>
             <p className="mt-2 text-slate-500">
               Here is what's happening with your billing today.
