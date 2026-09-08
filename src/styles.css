@@ -1,77 +1,97 @@
-/* =========================================================
-   GLOBAL RESET — SINGLE SCROLL SOURCE OF TRUTH
-   Only html (or body) owns the scrollbar. Nothing else
-   in the ancestor chain should set overflow-y: auto/scroll
-   or a fixed height.
-========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import 'tailwindcss';
 
-/* Light Theme Variables */
-:root {
-  --primary-color: #2563eb;
-  --primary-light: #3b82f6;
-  --primary-dark: #1d4ed8;
-  --secondary-color: #059669;
-  --secondary-light: #10b981;
-  --secondary-dark: #047857;
-  --font-family: 'Inter', 'Roboto', sans-serif;
-  --text-primary: #1f2937;
-  --text-secondary: #6b7280;
-  --background-light: #f9fafb;
-  --background-white: #ffffff;
-  --border-color: #e5e7eb;
-  --success-color: #10b981;
-  --warning-color: #f59e0b;
-  --error-color: #ef4444;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+@theme {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --color-ink: #17202a;
+  --color-mist: #f5f7f5;
+  --color-coral: #ef6f55;
+  --color-mint: #dff5e8;
 }
 
 * {
   box-sizing: border-box;
-  font-family: var(--font-family);
 }
-
 html {
-  height: auto;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
 }
-
 body {
-  height: auto;
-  min-height: 100%;
   margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background: var(--background-white);
+  min-width: 320px;
+  background: #f5f7f5;
+  font-family: 'DM Sans', sans-serif;
 }
-
-/* Angular inserts this automatically — must not clip or scroll */
-app-root {
-  display: block;
-
-  width: 100%;
-  height: auto;
-  min-height: 100%;
-
-  margin: 0;
-  padding: 0;
-
-  overflow: visible;
+button,
+input {
+  font: inherit;
 }
-
-/* router-outlet is a comment node, but whatever sits right after it
-   (your routed component's host) must never get its own height/scroll */
-router-outlet + * {
+button,
+a {
+  transition: all 0.2s ease;
+}
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(23, 32, 42, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 32, 42, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 70%);
+}
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: rgba(239, 111, 85, 0.08);
+  padding: 0.45rem 0.8rem;
+  color: #ef6f55;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.field {
   display: block;
-
   width: 100%;
-  height: auto;
-
-  overflow: visible;
+  margin-top: 0.5rem;
+  border: 1px solid rgba(23, 32, 42, 0.14);
+  border-radius: 0.75rem;
+  background: #fbfcfb;
+  padding: 0.8rem 0.9rem;
+  font-weight: 400;
+  outline: none;
+}
+.field:focus {
+  border-color: #ef6f55;
+  box-shadow: 0 0 0 3px rgba(239, 111, 85, 0.12);
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.animate-rise {
+  animation: rise 0.7s ease both;
+}
+.animate-float {
+  animation:
+    rise 0.8s 0.12s ease both,
+    float 6s 1s ease-in-out infinite;
 }
