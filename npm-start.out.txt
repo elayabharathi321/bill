@@ -1,0 +1,42 @@
+
+> bill-management-app@0.1.0 start
+> node dev.js
+
+JSON Server is running on http://localhost:3001
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m1087[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[0mGET /products?_limit=2 [32m200[0m 41.686 ms - 581[0m
+[0mGET /users?email=admin%40billapp.com&password=admin123 [32m200[0m 38.495 ms - 249[0m
+[0mGET /notifications?_sort=createdAt&_order=desc&_limit=6 [32m200[0m 27.257 ms - 787[0m
+[0mGET /users?email=admin@billapp.com&password=admin123 [32m200[0m 30.763 ms - 249[0m
+[2m11:28:22 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/layouts/AuthLayout.jsx, /src/index.css, /src/pages/auth/LoginPage.jsx, /src/components/layout/Sidebar.jsx, /src/components/layout/Header.jsx[22m
+[2m11:28:22 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/common/index.js[22m
+[2m11:30:40 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Sidebar.jsx, /src/index.css[22m
+[2m11:30:40 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Sidebar.jsx, /src/index.css[22m
+[2m11:31:19 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Sidebar.jsx, /src/index.css[22m
+[2m11:31:19 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Sidebar.jsx, /src/index.css[22m
+[2m11:31:19 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/layouts/DashboardLayout.jsx, /src/index.css[22m
+[2m11:31:40 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/services/index.js[22m
+[2m11:32:30 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/products/ProductsPage.jsx, /src/index.css[22m
+[2m11:32:31 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/categories/CategoriesPage.jsx, /src/index.css[22m
+[2m11:32:31 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/inventory/InventoryPage.jsx, /src/index.css[22m
+[2m11:32:32 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/customers/CustomersPage.jsx, /src/index.css[22m
+[2m11:33:31 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/suppliers/SuppliersPage.jsx, /src/index.css[22m
+[2m11:33:32 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/purchases/PurchasesPage.jsx, /src/index.css[22m
+[2m11:33:32 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/invoices/InvoicesPage.jsx, /src/index.css[22m
+[2m11:33:33 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/payments/PaymentsPage.jsx, /src/index.css[22m
+[2m11:34:58 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/returns/ReturnsPage.jsx, /src/index.css[22m
+[2m11:34:59 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/users/UsersPage.jsx, /src/index.css[22m
+[2m11:35:00 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/notifications/NotificationsPage.jsx, /src/index.css[22m
+[2m11:35:00 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/audit-logs/AuditLogsPage.jsx, /src/index.css[22m
+[2m11:35:01 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/reports/ReportsPage.jsx, /src/index.css[22m
+[2m11:35:10 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/audit-logs/AuditLogsPage.jsx, /src/index.css[22m
+[0mGET /products?_expand=category&_page=1&_limit=5 [32m200[0m 15.293 ms - -[0m
+[0mGET /products?q=mouse&_page=1&_limit=5 [32m200[0m 13.312 ms - 287[0m
+[0mGET /invoices?_expand=customer&_page=1&_limit=2 [32m200[0m 10.210 ms - -[0m
+[0mGET /notifications?isRead=false&_limit=10 [32m200[0m 6.823 ms - 403[0m
+[0mGET /users?_sort=name&_order=asc [32m200[0m 11.880 ms - 1002[0m

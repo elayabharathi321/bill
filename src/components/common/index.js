@@ -1,0 +1,25 @@
+// Barrel export for common UI components.
+export { default as Button } from './Button';
+export { default as Input } from './Input';
+export { default as Select } from './Select';
+export { default as Textarea } from './Textarea';
+export { default as Modal } from './Modal';
+export { default as ConfirmDialog, ConfirmDialogProvider, useConfirm } from './ConfirmDialog';
+export { default as Table } from './Table';
+export { default as Pagination } from './Pagination';
+export { default as SearchBar } from './SearchBar';
+export { default as DatePicker } from './DatePicker';
+export { default as StatusBadge } from './StatusBadge';
+export { default as LoadingSpinner } from './LoadingSpinner';
+export { default as Skeleton } from './Skeleton';
+export { default as EmptyState } from './EmptyState';
+export { default as ErrorState } from './ErrorState';
+export { default as Toast, ToastProvider, useToast } from './Toast';
+export { default as Card } from './Card';
+export { default as StatCard } from './StatCard';
+export { default as Dropdown } from './Dropdown';
+export { default as Tabs } from './Tabs';
+export { default as Breadcrumb } from './Breadcrumb';
+export { default as PageHeader } from './PageHeader';
+export { default as PlaceholderPage } from './PlaceholderPage';
+export { default as ModuleIndexPage } from './ModuleIndexPage';
